@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bolsa de Compras — Fashion World</title>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#6cf8bb",
+            "on-surface": "#1b1b1e",
+            "secondary-fixed": "#6ffbbe",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#00714d",
+            "primary-container": "#064e3b",
+            "on-secondary": "#ffffff",
+            "secondary": "#006c49",
+            "on-primary-fixed-variant": "#0b513d",
+            "on-primary-fixed": "#002117",
+            "tertiary": "#2d2e2c",
+            "on-tertiary-fixed": "#1b1c1a",
+            "surface-dim": "#dcd9dd",
+            "inverse-surface": "#303033",
+            "inverse-on-surface": "#f3f0f4",
+            "on-surface-variant": "#404944",
+            "on-background": "#1b1b1e",
+            "surface-container-highest": "#e4e1e6",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container": "#f0edf1",
+            "primary": "#003527",
+            "surface-tint": "#2b6954",
+            "on-primary-container": "#80bea6",
+            "on-tertiary-fixed-variant": "#474744",
+            "on-secondary-fixed": "#002113",
+            "tertiary-fixed-dim": "#c8c6c3",
+            "inverse-primary": "#95d3ba",
+            "on-tertiary-container": "#b2b1ae",
+            "tertiary-container": "#444441",
+            "surface-container-low": "#f6f2f7",
+            "background": "#fbf8fc",
+            "secondary-fixed-dim": "#4edea3",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "outline": "#707974",
+            "surface-variant": "#e4e1e6",
+            "primary-fixed-dim": "#95d3ba",
+            "outline-variant": "#bfc9c3",
+            "tertiary-fixed": "#e4e2de",
+            "surface-bright": "#fbf8fc",
+            "surface": "#fbf8fc",
+            "surface-container-high": "#eae7eb",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#b0f0d6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "space-xl": "3.5rem",
+            "margin": "3rem",
+            "space-md": "1.25rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.375rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "headline-lg": [
+              "Playfair Display"
+            ],
+            "label-md": [
+              "Plus Jakarta Sans"
+            ],
+            "body-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg-mobile": [
+              "Playfair Display"
+            ],
+            "headline-display-mobile": [
+              "Playfair Display"
+            ],
+            "headline-display": [
+              "Playfair Display"
+            ],
+            "label-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "body-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "label-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-md": [
+              "Playfair Display"
+            ],
+            "headline-sm": [
+              "Playfair Display"
+            ],
+            "body-md": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "headline-lg": [
+              "40px",
+              {
+                "lineHeight": "48px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.06em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-sm": [
+              "13px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-lg-mobile": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-display-mobile": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-display": [
+              "56px",
+              {
+                "lineHeight": "64px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-lg": [
+              "18px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.08em",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-md": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-sm": [
+              "22px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "500"
+              }
+            ],
+            "body-md": [
+              "15px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    ::selection {
+      background-color: #064e3b;
+      color: #faf9f6;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-full flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-surface-bright">
+<!-- TopNavBar (Shared Component JSON Blueprint) -->
+<header class="bg-surface/85 backdrop-blur-md dark:bg-surface/85 border-b border-outline-variant/40 dark:border-outline/30 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 py-4">
+<!-- Brand Logo -->
+<a class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface dark:text-inverse-on-surface transition-transform duration-150 active:scale-[0.99]" href="#">
+        Fashion World
+      </a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+          Inicio
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+          Catálogo
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+          Colecciones
+        </a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+          Novedades
+        </a>
+</nav>
+<!-- Right Trailing Controls & Search -->
+<div class="flex items-center gap-5">
+<!-- Search Bar -->
+<div class="relative hidden sm:block">
+<input class="w-48 lg:w-60 bg-surface-container-lowest border border-outline-variant/60 rounded-full px-4 py-1.5 pl-9 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-0 transition-colors" placeholder="Buscar piezas..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">
+            search
+          </span>
+</div>
+<!-- Trailing Action: Person -->
+<a class="p-2 text-on-surface-variant hover:text-primary transition-colors" href="#" title="Mi Cuenta">
+<span class="material-symbols-outlined text-[22px]">person</span>
+</a>
+<!-- Trailing Action: Shopping Bag with Active Indicator Badge -->
+<a class="relative p-2 text-primary transition-colors flex items-center justify-center" href="#" title="Bolsa de Compras">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-primary-container text-on-primary font-label-sm text-[10px] leading-tight flex items-center justify-center font-semibold">
+            3
+          </span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Canvas: Shopping Cart & Checkout Overview -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-6 md:px-12 py-8 md:py-12">
+<!-- Editorial Breadcrumb -->
+<nav class="flex items-center gap-2 mb-6 font-label-md text-label-md text-outline">
+<a class="hover:text-primary transition-colors" href="#">Inicio</a>
+<span class="text-[10px] leading-none opacity-60">/</span>
+<span class="text-on-surface font-medium">Mi Carrito</span>
+</nav>
+<!-- Page Header Title & Subtitle -->
+<div class="border-b border-outline-variant/30 pb-6 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+          Bolsa de Compras
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
+          Revisa tus prendas seleccionadas antes de proceder al pedido
+        </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high rounded-full font-label-md text-label-md text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          3 artículos (4 unidades)
+        </span>
+</div>
+</div>
+<!-- 2-Column Asymmetric Editorial Layout (7:5 desktop ratio) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left Column: Articles List & Utilities (7 cols) -->
+<section class="lg:col-span-7 flex flex-col gap-6">
+<!-- Table / List Header -->
+<div class="hidden sm:grid grid-cols-12 text-outline font-label-sm text-label-sm uppercase tracking-wider pb-3 border-b border-outline-variant/30">
+<div class="col-span-7">Prenda &amp; Detalles</div>
+<div class="col-span-3 text-center">Cantidad</div>
+<div class="col-span-2 text-right">Subtotal</div>
+</div>
+<!-- Product Item 1: Blazer Estructurado Esmeralda -->
+<div class="group py-6 border-b border-outline-variant/30 flex flex-col sm:grid sm:grid-cols-12 gap-5 items-center transition-all duration-200">
+<!-- Image + Detail Info -->
+<div class="w-full sm:col-span-7 flex gap-4 items-start">
+<div class="w-24 sm:w-28 aspect-[3/4] bg-surface-container overflow-hidden rounded-lg flex-shrink-0 relative">
+<img class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" data-alt="Editorial portrait of an emerald green structured tailored blazer with clean lapels and horn buttons on an elegant model against a bright minimalist ivory atelier background with soft natural side lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu1HAJBm4DpJJvkB71X4W_x-Z_-YbzTszxVMQZOFYL2nR-kTkP36GCYGf5E-eOlIqSPfobj_2xZH80M2ekTcKwreIpSrvPJgsnTkCKOcUv_Hx5_u09CHwFxBdZhyBfxdHLWTyXRGk88J1Dn2QhBfK3gdC6dHtqmDzLDSr5NE8tnNf6j0xSQUYYEl5Clymm-KRZshA7mghYvjuwpPkSYeWiW57UWXYp6TPyAviqTQzXwx5Yr93xQJwnxg"/>
+</div>
+<div class="flex flex-col justify-between h-full py-1">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Atelier Sastrería</span>
+<h2 class="font-headline-sm text-[18px] leading-snug text-on-surface font-medium hover:text-primary cursor-pointer transition-colors mt-0.5">
+                  Blazer Estructurado Esmeralda
+                </h2>
+<div class="flex items-center gap-3 mt-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Talla: <strong class="text-on-surface font-medium">S</strong></span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1.5">
+                    Color: 
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#064e3b] border border-outline-variant/40"></span>
+<strong class="text-on-surface font-medium">Verde Esmeralda</strong>
+</span>
+</div>
+</div>
+<p class="font-body-md text-body-md font-medium text-on-surface sm:hidden mt-2">
+                $145.00 USD
+              </p>
+</div>
+</div>
+<!-- Quantity Control -->
+<div class="w-full sm:col-span-3 flex sm:justify-center items-center justify-between sm:w-auto">
+<div class="inline-flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest px-1 py-0.5">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" title="Reducir">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-8 text-center font-label-md text-label-md font-semibold text-on-surface">1</span>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" title="Aumentar">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<!-- Mobile delete trigger -->
+<button class="sm:hidden text-outline hover:text-error transition-colors p-1" title="Eliminar artículo">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<!-- Subtotal & Desktop Remove -->
+<div class="hidden sm:flex sm:col-span-2 flex-col items-end justify-center">
+<span class="font-headline-sm text-[18px] text-on-surface font-medium leading-none">
+              $145.00 <span class="font-label-sm text-[11px] font-normal text-outline">USD</span>
+</span>
+<button class="mt-3 text-outline hover:text-error transition-colors flex items-center gap-1 font-label-sm text-[11px]" title="Eliminar">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Quitar</span>
+</button>
+</div>
+</div>
+<!-- Product Item 2: Pantalón Sastre Plisado Esmeralda -->
+<div class="group py-6 border-b border-outline-variant/30 flex flex-col sm:grid sm:grid-cols-12 gap-5 items-center transition-all duration-200">
+<div class="w-full sm:col-span-7 flex gap-4 items-start">
+<div class="w-24 sm:w-28 aspect-[3/4] bg-surface-container overflow-hidden rounded-lg flex-shrink-0 relative">
+<img class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" data-alt="Editorial close-up of relaxed emerald green pleated tailored trousers paired with classic footwear, photographed in a high-key architectural studio with delicate linen textures and soft diffused daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQdoqhPik2IOGYuobQK55zYbkxu2NL-OMh5rVYIdTdLX-jWIJ21cwS0v5TNBY0vEG_Uf0OInKYTHu7oXxA-XDv7RM2hkT6r4EgxfuzRdaMLbccv_xjmwXwj5zHaZhfVydcMhrhprSBmIcrbZfpVhDYO0PBSXyloeZc6eOo2whizckLkNS1wsYBKGy5kcGAFe7li_fE7OdHBbhSKWEZft5KTL5Efjs7PEHhsE_z8Qv0hayI_csgWQ8Rfg"/>
+</div>
+<div class="flex flex-col justify-between h-full py-1">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Atelier Sastrería</span>
+<h2 class="font-headline-sm text-[18px] leading-snug text-on-surface font-medium hover:text-primary cursor-pointer transition-colors mt-0.5">
+                  Pantalón Sastre Plisado Esmeralda
+                </h2>
+<div class="flex items-center gap-3 mt-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Talla: <strong class="text-on-surface font-medium">M</strong></span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1.5">
+                    Color: 
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#064e3b] border border-outline-variant/40"></span>
+<strong class="text-on-surface font-medium">Verde Esmeralda</strong>
+</span>
+</div>
+</div>
+<p class="font-body-md text-body-md font-medium text-on-surface sm:hidden mt-2">
+                $115.00 USD
+              </p>
+</div>
+</div>
+<div class="w-full sm:col-span-3 flex sm:justify-center items-center justify-between sm:w-auto">
+<div class="inline-flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest px-1 py-0.5">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" title="Reducir">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-8 text-center font-label-md text-label-md font-semibold text-on-surface">1</span>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" title="Aumentar">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="sm:hidden text-outline hover:text-error transition-colors p-1" title="Eliminar artículo">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="hidden sm:flex sm:col-span-2 flex-col items-end justify-center">
+<span class="font-headline-sm text-[18px] text-on-surface font-medium leading-none">
+              $115.00 <span class="font-label-sm text-[11px] font-normal text-outline">USD</span>
+</span>
+<button class="mt-3 text-outline hover:text-error transition-colors flex items-center gap-1 font-label-sm text-[11px]" title="Eliminar">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Quitar</span>
+</button>
+</div>
+</div>
+<!-- Product Item 3: Camiseta Básica de Algodón Pima (Qty 2) -->
+<div class="group py-6 border-b border-outline-variant/30 flex flex-col sm:grid sm:grid-cols-12 gap-5 items-center transition-all duration-200">
+<div class="w-full sm:col-span-7 flex gap-4 items-start">
+<div class="w-24 sm:w-28 aspect-[3/4] bg-surface-container overflow-hidden rounded-lg flex-shrink-0 relative">
+<img class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" data-alt="Editorial still life presentation of a pristine off-white pima cotton essential t-shirt with organic weave details, captured under warm gallery lighting against a sculptural beige textured backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk-fgQTX220TafwkoLQVTLNPRiKvoy5AtbL54ZnOrwyV6ECXPPj4KKo2c06cAppMqUFbIZyuKTBoq3lQKvEotKydxzIc0Jb4oZs-NvtzViYmRj9ERmqvxFyC9sh3QNCtwievMHnYTS3zoTrUHsdeJ20m1tjd1vJQxNsBe0968BNwE7wkwRjWMTdmU71AuZ4Z_UUot-jAo2CINCssNgjyY6KKSvL_NngjTB8geEdG1T5TlC44dA0uO7pA"/>
+</div>
+<div class="flex flex-col justify-between h-full py-1">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Esenciales Pima</span>
+<h2 class="font-headline-sm text-[18px] leading-snug text-on-surface font-medium hover:text-primary cursor-pointer transition-colors mt-0.5">
+                  Camiseta Básica de Algodón Pima
+                </h2>
+<div class="flex items-center gap-3 mt-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Talla: <strong class="text-on-surface font-medium">S</strong></span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1.5">
+                    Color: 
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#FAF9F6] border border-outline-variant"></span>
+<strong class="text-on-surface font-medium">Blanco Marfil</strong>
+</span>
+</div>
+<span class="font-label-sm text-[11px] text-outline mt-1 block">$45.00 USD c/u</span>
+</div>
+<p class="font-body-md text-body-md font-medium text-on-surface sm:hidden mt-2">
+                $90.00 USD (2 unid.)
+              </p>
+</div>
+</div>
+<div class="w-full sm:col-span-3 flex sm:justify-center items-center justify-between sm:w-auto">
+<div class="inline-flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest px-1 py-0.5">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" title="Reducir">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="w-8 text-center font-label-md text-label-md font-semibold text-on-surface">2</span>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded" title="Aumentar">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="sm:hidden text-outline hover:text-error transition-colors p-1" title="Eliminar artículo">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<div class="hidden sm:flex sm:col-span-2 flex-col items-end justify-center">
+<span class="font-headline-sm text-[18px] text-on-surface font-medium leading-none">
+              $90.00 <span class="font-label-sm text-[11px] font-normal text-outline">USD</span>
+</span>
+<button class="mt-3 text-outline hover:text-error transition-colors flex items-center gap-1 font-label-sm text-[11px]" title="Eliminar">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Quitar</span>
+</button>
+</div>
+</div>
+<!-- Utility Bottom Actions -->
+<div class="flex items-center justify-between pt-4">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-on-surface hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<span>Continuar comprando</span>
+</a>
+<button class="font-label-md text-label-md text-outline hover:text-error transition-colors inline-flex items-center gap-1.5 opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined text-[16px]">remove_shopping_cart</span>
+<span>Vaciar carrito</span>
+</button>
+</div>
+<!-- Elegant Authentication Synch Banner -->
+<div class="mt-6 p-4 rounded-lg bg-surface-container-low border border-outline-variant/40 flex items-start gap-3.5">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mt-0.5">
+            sync_saved_locally
+          </span>
+<div class="text-body-sm text-body-sm text-on-surface-variant">
+<p>
+              Inicia sesión para guardar tu bolsa y sincronizar tus prendas en todos tus dispositivos.
+              <a class="font-semibold text-primary underline underline-offset-4 ml-1 hover:text-primary-container" href="#">
+                Acceder a mi cuenta
+              </a>
+</p>
+</div>
+</div>
+</section>
+<!-- Right Column: Order Summary & Checkout Card (5 cols) -->
+<aside class="lg:col-span-5">
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-6 lg:p-8 shadow-sm relative sticky top-28">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium pb-5 border-b border-outline-variant/30">
+            Resumen del Pedido
+          </h2>
+<!-- Cost Breakdown List -->
+<div class="py-5 space-y-3.5 border-b border-outline-variant/30">
+<div class="flex justify-between items-center text-body-md text-body-md text-on-surface-variant">
+<span>Subtotal (4 prendas)</span>
+<span class="text-on-surface font-medium">$350.00 USD</span>
+</div>
+<div class="flex justify-between items-start text-body-md text-body-md text-on-surface-variant">
+<div>
+<span class="block">Estimación de envío estándar</span>
+<span class="font-label-sm text-[11px] text-outline">Calculado al momento de entrega</span>
+</div>
+<span class="text-on-surface font-medium">$15.00 USD</span>
+</div>
+<div class="flex justify-between items-center text-body-md text-body-md text-on-surface-variant">
+<span>Impuestos estimados</span>
+<span class="text-on-surface font-medium">$0.00 USD</span>
+</div>
+</div>
+<!-- Total Highlight -->
+<div class="py-5 border-b border-outline-variant/30 flex justify-between items-baseline">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">Total</span>
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary-container font-semibold tracking-tight">
+                $365.00
+              </span>
+<span class="font-label-md text-label-md text-outline ml-1 font-normal">USD</span>
+</div>
+</div>
+<!-- Action & Requirement Warning -->
+<div class="pt-6 space-y-4">
+<div class="bg-surface-container-low/70 border border-outline-variant/40 rounded-lg p-3 flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary">info</span>
+<p class="font-label-md text-label-md text-on-surface-variant">
+                Para confirmar tu pedido debes identificarte o registrarte.
+              </p>
+</div>
+<!-- Primary Emerald CTA Button -->
+<button class="w-full bg-primary-container hover:bg-[#059669] text-surface-bright font-label-lg text-label-lg py-4 px-6 rounded-lg tracking-wide font-semibold shadow-sm hover:shadow transition-all duration-200 active:scale-[0.99] flex items-center justify-center gap-2 group">
+<span>Proceder al pedido</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<!-- Frictionless Direct Notice -->
+<p class="font-label-sm text-center text-outline leading-relaxed px-2">
+              No se requiere tarjeta bancaria en este paso. Pago y confirmación directa según disponibilidad.
+            </p>
+</div>
+<!-- Trust & Atelier Warranties (3 points) -->
+<div class="mt-8 pt-6 border-t border-outline-variant/30 space-y-3.5">
+<div class="flex items-center gap-3 text-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">
+                checkroom
+              </span>
+<span>Preparación artesanal cuidada en cada prenda</span>
+</div>
+<div class="flex items-center gap-3 text-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">
+                published_with_changes
+              </span>
+<span>30 días para cambios de talla sin costo</span>
+</div>
+<div class="flex items-center gap-3 text-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">
+                support_agent
+              </span>
+<span>Atención personalizada y asesoría atelier</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Editorial Footer (Shared Component JSON Blueprint) -->
+<footer class="bg-surface-container-low dark:bg-surface-container border-t border-outline-variant/30 dark:border-outline/20 docked full-width bottom mt-auto">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface dark:text-inverse-on-surface block">
+            Fashion World
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Moda editorial contemporánea y confección responsable.
+          </p>
+</div>
+<!-- Editorial Navigation Links from JSON -->
+<nav class="flex flex-wrap gap-x-8 gap-y-3">
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+            Atención al Cliente
+          </a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+            Guía de Tallas
+          </a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+            Envíos y Devoluciones
+          </a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+            Sostenibilidad
+          </a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+            Términos y Condiciones
+          </a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+            Privacidad
+          </a>
+</nav>
+</div>
+<div class="pt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between text-outline font-label-sm text-label-sm opacity-80 gap-4">
+<p>© 2025 Fashion World. Todos los derechos reservados. Precios expresados en USD.</p>
+<div class="flex items-center gap-4 text-xs">
+<span>Diseño Atelier</span>
+<span>•</span>
+<span>Calidad Certificada</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

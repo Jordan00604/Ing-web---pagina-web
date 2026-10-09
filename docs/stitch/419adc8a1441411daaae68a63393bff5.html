@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background text-on-surface" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Pedidos — Fashion World Admin Atelier</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#fbf8fc",
+            "on-secondary-fixed-variant": "#005236",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#4edea3",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#1b1c1a",
+            "on-secondary": "#ffffff",
+            "secondary": "#006c49",
+            "primary": "#003527",
+            "on-surface": "#1b1b1e",
+            "surface-container-highest": "#e4e1e6",
+            "inverse-primary": "#95d3ba",
+            "on-primary-container": "#80bea6",
+            "outline-variant": "#bfc9c3",
+            "primary-container": "#064e3b",
+            "surface-container-low": "#f6f2f7",
+            "on-primary-fixed": "#002117",
+            "tertiary-container": "#444441",
+            "surface-bright": "#fbf8fc",
+            "inverse-on-surface": "#f3f0f4",
+            "surface-variant": "#e4e1e6",
+            "tertiary-fixed-dim": "#c8c6c3",
+            "surface": "#fbf8fc",
+            "on-tertiary-container": "#b2b1ae",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#6cf8bb",
+            "primary-fixed-dim": "#95d3ba",
+            "surface-container": "#f0edf1",
+            "tertiary-fixed": "#e4e2de",
+            "secondary-fixed": "#6ffbbe",
+            "on-secondary-fixed": "#002113",
+            "on-surface-variant": "#404944",
+            "inverse-surface": "#303033",
+            "on-error": "#ffffff",
+            "surface-tint": "#2b6954",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed-variant": "#474744",
+            "on-background": "#1b1b1e",
+            "on-primary-fixed-variant": "#0b513d",
+            "surface-container-high": "#eae7eb",
+            "on-secondary-container": "#00714d",
+            "outline": "#707974",
+            "surface-dim": "#dcd9dd",
+            "primary-fixed": "#b0f0d6",
+            "tertiary": "#2d2e2c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.75rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3.5rem",
+            "space-xs": "0.375rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1.25rem",
+            "margin": "3rem"
+          },
+          "fontFamily": {
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-display": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-display-mobile": ["Playfair Display"]
+          },
+          "fontSize": {
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-display-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #bfc9c3;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="h-full flex overflow-hidden bg-background antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- ==================== SIDEBAR ADMIN ATELIER ==================== -->
+<aside class="w-72 bg-surface-container-lowest border-r border-outline-variant/30 flex flex-col justify-between shrink-0 z-30 select-none">
+<div class="flex flex-col">
+<!-- Brand & Badge -->
+<div class="px-7 py-6 border-b border-outline-variant/20 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase tracking-widest text-primary font-bold">Fashion World</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm uppercase px-2 py-0.5 rounded tracking-widest font-semibold">ADMIN ATELIER</span>
+<span class="font-label-sm text-label-sm text-outline tracking-wider">v2.4</span>
+</div>
+</div>
+<!-- Navigation Section -->
+<div class="px-4 py-6">
+<p class="px-3 mb-3 font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Gestión Principal</p>
+<nav class="space-y-1">
+<!-- Productos e Inventario -->
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-150 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Productos e Inventario</span>
+</div>
+</a>
+<!-- Gestión de Pedidos (ACTIVO) -->
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-surface-container text-primary font-semibold border-l-2 border-primary transition-all duration-150" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="font-label-md text-label-md">Gestión de Pedidos</span>
+</div>
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full font-medium shadow-xs">3</span>
+</a>
+<!-- Clientes & Membresías -->
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-150 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Clientes &amp; Membresías</span>
+</div>
+</a>
+<!-- Colecciones & Lookbook -->
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-150 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-md text-label-md">Colecciones &amp; Lookbook</span>
+</div>
+</a>
+</nav>
+<!-- Preferencias -->
+<div class="mt-8">
+<p class="px-3 mb-3 font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Preferencias</p>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-150 group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Ajustes de Tienda</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+<!-- Sidebar Footer -->
+<div class="p-4 border-t border-outline-variant/20 bg-surface-container-low/50 space-y-1.5">
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="#">
+<span class="font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="storefront">storefront</span>
+          Ver tienda pública
+        </span>
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="open_in_new">open_in_new</span>
+</a>
+<a class="flex items-center gap-2 px-3 py-2 rounded-lg text-error hover:bg-error-container/40 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Cerrar sesión</span>
+</a>
+</div>
+</aside>
+<!-- ==================== MAIN CONTENT AREA ==================== -->
+<div class="flex-1 flex flex-col h-full min-w-0 overflow-hidden bg-background">
+<!-- Top Header Bar -->
+<header class="h-16 border-b border-outline-variant/30 bg-surface-container-lowest flex items-center justify-between px-8 shrink-0 z-20">
+<!-- Left: Boutique Selector -->
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+<button class="flex items-center gap-2 font-label-md text-label-md text-on-surface hover:text-primary transition-colors bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/30">
+<span>Boutique Central (ES) | USD ($)</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Right: Actions & Admin Profile -->
+<div class="flex items-center gap-5">
+<!-- Notification bell with dot -->
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</button>
+<div class="h-6 w-px bg-outline-variant/40"></div>
+<!-- Super Admin Profile -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-fixed-variant flex items-center justify-center font-label-md text-label-md font-bold ring-1 ring-primary/20">
+            HR
+          </div>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Helena Rostova</span>
+<span class="font-label-sm text-label-sm text-outline tracking-wider">Super Admin</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Scrollable Workspace -->
+<main class="flex-1 overflow-y-auto custom-scroll p-8 space-y-7">
+<!-- Breadcrumb & Header Actions -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+<div>
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 text-outline font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span>Fashion World</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span>Panel de Administrador</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">Gestión de Pedidos</span>
+</nav>
+<!-- Main Title -->
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Gestión de Pedidos</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+            Controla el flujo de órdenes, estado de preparación en atelier, envíos prioritarios y seguimiento detallado de clientes.
+          </p>
+</div>
+<!-- Top Actions -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-on-surface/30 bg-surface-container-lowest font-label-md text-label-md text-on-surface hover:bg-surface-container-highest transition-all scale-[0.99] active:scale-95 shadow-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="file_download">file_download</span>
+            Exportar Reporte (CSV)
+          </button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-container hover:bg-secondary text-surface-bright font-label-md text-label-md tracking-wider transition-all scale-[0.99] active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+            Crear Pedido Manual
+          </button>
+</div>
+</div>
+<!-- ==================== KPIS METRIC CARDS ==================== -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Pedidos Totales (Mes)</span>
+<div class="p-2 bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="receipt_long">receipt_long</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">124 órdenes</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-secondary font-label-sm text-label-sm font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                +12%
+              </span>
+<span class="font-label-sm text-label-sm text-outline">vs mes anterior</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-5 shadow-xs flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1.5 h-full bg-secondary"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">En Preparación / Atelier</span>
+<div class="p-2 bg-secondary-fixed/40 rounded-lg text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline-md text-headline-md font-semibold text-primary">3 pedidos</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-secondary bg-secondary-fixed/30 font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                Atención prioritaria
+              </span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Enviados / En Tránsito</span>
+<div class="p-2 bg-surface-container rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_shipping">local_shipping</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">18 órdenes</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Seguimiento courier activo</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-5 shadow-xs flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Facturación del Mes</span>
+<div class="p-2 bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">$18,420 <span class="font-body-sm text-body-sm font-normal text-outline">USD</span></div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="font-label-sm text-label-sm text-outline">Ticket promedio:</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">$148.50 USD</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== FILTER BAR & SEARCH ==================== -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-4 shadow-xs flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant/40 rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-colors" placeholder="Buscar por nº de pedido (#FW-...), cliente o correo..." type="text" value="#FW-84920"/>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Status Tabs Selector -->
+<div class="inline-flex p-1 bg-surface-container rounded-lg border border-outline-variant/20">
+<button class="px-3 py-1 text-on-surface font-label-md text-label-md bg-surface-container-lowest shadow-xs rounded font-medium">Todos</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-primary font-label-md text-label-md rounded font-medium">En preparación</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-primary font-label-md text-label-md rounded font-medium">Enviado</button>
+<button class="px-3 py-1 text-on-surface-variant hover:text-primary font-label-md text-label-md rounded font-medium">Entregado</button>
+</div>
+<!-- Date Filter -->
+<button class="flex items-center gap-2 px-3 py-2 bg-surface-container-lowest border border-outline-variant/40 rounded-lg font-label-md text-label-md text-on-surface hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="calendar_today">calendar_today</span>
+<span>Últimos 30 días</span>
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="expand_more">expand_more</span>
+</button>
+<!-- Sort Filter -->
+<button class="flex items-center gap-2 px-3 py-2 bg-surface-container-lowest border border-outline-variant/40 rounded-lg font-label-md text-label-md text-on-surface hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="swap_vert">swap_vert</span>
+<span>Más recientes primero</span>
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- ==================== MAIN WORKSPACE: TABLE + QUICK INSPECT PANEL ==================== -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- Table Column (8 Cols on XL) -->
+<div class="xl:col-span-8 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-xs overflow-hidden">
+<div class="overflow-x-auto custom-scroll">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70 border-b border-outline-variant/30">
+<th class="py-3.5 px-4 font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Nº Pedido &amp; Fecha</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Cliente</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Prendas</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Total</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Estado</th>
+<th class="py-3.5 px-4 font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-sm text-body-sm">
+<!-- ROW 1 (SELECTED / HIGHLIGHTED) -->
+<tr class="bg-surface-container/60 hover:bg-surface-container transition-colors group cursor-pointer border-l-4 border-l-primary">
+<td class="py-4 px-4 align-top">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-primary">#FW-84920</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<div class="text-outline font-label-sm text-label-sm mt-0.5">24 Oct 2025, 14:32</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-medium text-on-surface">Elena Mendoza</div>
+<div class="text-outline font-label-sm text-label-sm">elena.mendoza@email.com</div>
+<div class="text-outline font-label-sm text-label-sm">Madrid, España</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex items-center gap-1.5">
+<img class="w-8 h-10 object-cover rounded border border-outline-variant/30" data-alt="Close-up detail shot of an emerald green structured blazer tailored from heavy wool, hanging on an atelier wooden rack with soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAzuIEd5cjezQQ2egZjLHjvwdPXEELkCBBrlM4OoCLCEKJf9q7g30pdjSIxU4IU8wvkVmKIVvwEXQGHTkMNqHtyfdKj3qMDMA2Dov4PDpQlj6cNXdDddpZMDaPceDqfjCWl1rQ_kUFvG2-qON0DHFDgzSeag6rm6yIGEJm33AViJgD2HC8gvSgwdzB3NVDcrUwLCXLzsZHEYeCCY8l3w3Ku1fjiohFLjEIuvpGhKo5N0de7ChSRVitkQ"/>
+<img class="w-8 h-10 object-cover rounded border border-outline-variant/30" data-alt="Tailored ivory pleated trousers displayed on a minimalist studio backdrop with editorial soft contrast shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASYacDgYb4-uGC-hQUurpxelTbANV6G1xq9qixmWxa3fnYRLlfaNXeAjg4G9FHT7PwtCEfuNMnUgmV1LT3kh8ZYyQAetFtnjnGEZnZxzUp_4hNImXAjdNtc7Gm69276E5uM5fnoBrotHHS-ieNo2SX7V5Bl1E2FbV7US6A-QSeA_6k6T9jXKAZJKBUcP3zaMdclvk2zAM7NFTtqz5Rm9HZSOmiL7NsXNuQweZeotyxf3Eww9YjEwFKZQ"/>
+<div class="w-8 h-10 rounded bg-surface-container-high border border-outline-variant/30 flex items-center justify-center font-label-sm text-label-sm text-on-surface-variant font-medium">
+                        +1
+                      </div>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 inline-block">3 artículos</span>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-semibold text-on-surface">$365.00 <span class="font-label-sm text-label-sm text-outline">USD</span></div>
+<span class="text-outline font-label-sm text-label-sm">Estándar</span>
+</td>
+<td class="py-4 px-4 align-top">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed/30 text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      En preparación
+                    </span>
+</td>
+<td class="py-4 px-4 align-top text-right">
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-medium hover:bg-secondary transition-colors">
+                      Ver detalle
+                    </button>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">#FW-84919</div>
+<div class="text-outline font-label-sm text-label-sm mt-0.5">24 Oct 2025, 11:15</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-medium text-on-surface">Carlos Velasco</div>
+<div class="text-outline font-label-sm text-label-sm">carlos.v@correo.com</div>
+<div class="text-outline font-label-sm text-label-sm">Barcelona, España</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex items-center gap-1.5">
+<img class="w-8 h-10 object-cover rounded border border-outline-variant/30" data-alt="Sand beige structured linen jacket styled cleanly on an invisible mannequin with architectural lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4zPsOIPihLdP4GBqJns8xUN5L7a16TrQWMw-I4kefuwCSiFF4U5LMfCthm0-JuCf2ABkPXiawWeTr5tAOSADi0mRVnIK-I9zKNwZ_DRps1BSgpZsgvxOoaXBIEU4Koo2BqMi4iZuM9hSsysjN6rLeHP3vYAMT6asuc4b7Yh9yMwi7KKNEA5s5HwDuVoGP7w5_gn5zYUrkwo3WRVLPGLCb55iTGTsEDTBP-Gu13hwy80jiBsg2d43jcQ"/>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 inline-block">1 artículo</span>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-semibold text-on-surface">$180.00 <span class="font-label-sm text-label-sm text-outline">USD</span></div>
+<span class="text-outline font-label-sm text-label-sm">DHL Express</span>
+</td>
+<td class="py-4 px-4 align-top">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                      En tránsito
+                    </span>
+</td>
+<td class="py-4 px-4 align-top text-right">
+<button class="px-2.5 py-1 rounded border border-outline-variant/50 text-on-surface font-label-sm text-label-sm font-medium hover:border-primary hover:text-primary transition-colors">
+                      Ver detalle
+                    </button>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">#FW-84918</div>
+<div class="text-outline font-label-sm text-label-sm mt-0.5">23 Oct 2025, 18:40</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-medium text-on-surface">Sofía Alarcón</div>
+<div class="text-outline font-label-sm text-label-sm">sofia.alarcon@moda.com</div>
+<div class="text-outline font-label-sm text-label-sm">Sevilla, España</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex items-center gap-1.5">
+<img class="w-8 h-10 object-cover rounded border border-outline-variant/30" data-alt="Deep emerald silk midi dress shimmering softly under warm studio lighting with fluid drapes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX1EBuGrh5vx2v3iINtw3JCGnuoTzt7kfODSyFc_NeJKAh8fxnneTDgL4wLDbYYytU3kqmf3tYomFk0QIhxODk1yYZCXrYt_tJv_UBQxYPxOdiVXWzTJ6iibWO4pt5_Dx3Olv0d5Qt9fVa8GGP8fTudXk0zMsiEi3ZU_Hdh5u1PJPENVG_u4UWzsRSwtzEPUDdXcCi9il08cZ902Lvvd8tPQzKfPVm2KIfSUFqeKoeNy3xpeGnOUcx_Q"/>
+<img class="w-8 h-10 object-cover rounded border border-outline-variant/30" data-alt="Black handcrafted leather ankle boots with sleek minimalist heel against ivory floor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4B6FiOOt6Uj7Q5McyTblS0OV6mdIZEGtvvR1i5c8cWvUmbkqsJ-E8mq-1hn-XOXrrzBb-dPp38kigBa1dmufpyyWWLsJtDWrexkRwr3MI861cGD8XF05BPzKZiHOTLwgctS5s-RDWxUsJagvkGENvA4ubzenkGZpWF-c3QHvQ7ZLSybDQU2C3IijNCsunAIVLc8rF0XS9TZD_aZHuhX-hBf3hD0qEULm_AK2Avj_Gn_Z1kxaCIFt5LQ"/>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 inline-block">2 artículos</span>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-semibold text-on-surface">$330.00 <span class="font-label-sm text-label-sm text-outline">USD</span></div>
+<span class="text-outline font-label-sm text-label-sm">Estándar</span>
+</td>
+<td class="py-4 px-4 align-top">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-outline font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                      Entregado
+                    </span>
+</td>
+<td class="py-4 px-4 align-top text-right">
+<button class="px-2.5 py-1 rounded border border-outline-variant/50 text-on-surface font-label-sm text-label-sm font-medium hover:border-primary hover:text-primary transition-colors">
+                      Ver detalle
+                    </button>
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">#FW-84917</div>
+<div class="text-outline font-label-sm text-label-sm mt-0.5">23 Oct 2025, 09:20</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-medium text-on-surface">Mateo Rivas</div>
+<div class="text-outline font-label-sm text-label-sm">mateo.rivas@email.com</div>
+<div class="text-outline font-label-sm text-label-sm">Valencia, España</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex items-center gap-1.5">
+<img class="w-8 h-10 object-cover rounded border border-outline-variant/30" data-alt="Fine knit polo shirt in forest green texture laid flat with mother of pearl buttons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCftoLYR5_ElBKErxugeAAuN5Db7w4dL6bAq_nT2QQWNebbQ7MqGJbHyMx-dVoT553DORPGP6GM6nYH1cqQ1U8Ijwm2Z1XzELVy47awcFb3RYm3lwatT0q7dMV0kdyXDSXA3LKJWP-aJEFfSfUwBdFD24srzJk04AOswVf5DZJfpUoeJDgYrc5dhAcEbYaZX2GsAyOjwQ2vkAx7eoeWVR_otweBTmnimr9xDEo9K77w_6jK_fXZMx7BCA"/>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 inline-block">1 artículo</span>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-semibold text-on-surface">$89.00 <span class="font-label-sm text-label-sm text-outline">USD</span></div>
+<span class="text-outline font-label-sm text-label-sm">Estándar</span>
+</td>
+<td class="py-4 px-4 align-top">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed/30 text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                      En preparación
+                    </span>
+</td>
+<td class="py-4 px-4 align-top text-right">
+<button class="px-2.5 py-1 rounded border border-outline-variant/50 text-on-surface font-label-sm text-label-sm font-medium hover:border-primary hover:text-primary transition-colors">
+                      Ver detalle
+                    </button>
+</td>
+</tr>
+<!-- ROW 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">#FW-84916</div>
+<div class="text-outline font-label-sm text-label-sm mt-0.5">22 Oct 2025, 16:05</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-medium text-on-surface">Lucía Navarro</div>
+<div class="text-outline font-label-sm text-label-sm">lucia.n@atelier.com</div>
+<div class="text-outline font-label-sm text-label-sm">Bilbao, España</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex items-center gap-1.5">
+<img class="w-8 h-10 object-cover rounded border border-outline-variant/30" data-alt="High fashion oversize beige trench coat with belted waist on soft neutral editorial set." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaTwaCOKzZBsN4DBp1AXjUhrkJv4tVwyvvWVUdF5t_r6Y75VstATW2zivUQbzlFywWUAru4wo6-lIgdK-z3OylEuCMUQ5Ntsg4bmenzrcu04pgIO5HoZVLlWfUPsjsHJXNH_jTF_AstMAOtq_JbX2fVLJHeGZ2Sfzu_-RndP1SmunV3iYBftrVt5sYArNy6keXgSSXrcJwmCGoG7YPTXRaBw273IrcbttSR9AIngPVHZp6Fe_51DBEvA"/>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-1 inline-block">2 artículos</span>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="font-semibold text-on-surface">$378.00 <span class="font-label-sm text-label-sm text-outline">USD</span></div>
+<span class="text-outline font-label-sm text-label-sm">Estándar</span>
+</td>
+<td class="py-4 px-4 align-top">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-outline font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                      Entregado
+                    </span>
+</td>
+<td class="py-4 px-4 align-top text-right">
+<button class="px-2.5 py-1 rounded border border-outline-variant/50 text-on-surface font-label-sm text-label-sm font-medium hover:border-primary hover:text-primary transition-colors">
+                      Ver detalle
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="p-4 border-t border-outline-variant/20 bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-3">
+<span class="font-body-sm text-body-sm text-outline">
+              Mostrando <strong class="text-on-surface font-medium">1-5</strong> de <strong class="text-on-surface font-medium">124</strong> pedidos
+            </span>
+<div class="inline-flex items-center gap-1">
+<button class="px-3 py-1.5 rounded text-outline hover:text-on-surface border border-outline-variant/30 font-label-sm text-label-sm hover:bg-surface-container transition-colors disabled:opacity-40">
+                Anterior
+              </button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center">
+                1
+              </button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm flex items-center justify-center">
+                2
+              </button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm flex items-center justify-center">
+                3
+              </button>
+<span class="px-1 text-outline">...</span>
+<button class="px-3 py-1.5 rounded text-on-surface border border-outline-variant/30 font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+                Siguiente
+              </button>
+</div>
+</div>
+</div>
+<!-- ==================== QUICK INSPECT MODAL/PANEL (4 Cols on XL) ==================== -->
+<aside class="xl:col-span-4 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-sm flex flex-col overflow-hidden sticky top-0">
+<!-- Panel Header -->
+<div class="p-5 border-b border-outline-variant/20 bg-surface-container-low/40 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="visibility">visibility</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Inspección Rápida</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary font-bold px-2 py-0.5 rounded tracking-wider">#FW-84920</span>
+</div>
+<div class="p-5 space-y-6">
+<!-- Customer Information Card -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Detalle del Cliente</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Cliente VIP • 4 compras</span>
+</div>
+<div class="p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20 space-y-2">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-semibold">
+                    EM
+                  </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Elena Mendoza</p>
+<p class="font-label-sm text-label-sm text-outline">elena.mendoza@email.com</p>
+</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 text-on-surface-variant font-body-sm text-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline shrink-0 mt-0.5" data-icon="pin_drop">pin_drop</span>
+<span>Calle Velázquez 42, 3º D, 28001 Madrid, España</span>
+</div>
+</div>
+</div>
+<!-- Order Status Controller -->
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold mb-2">
+                Cambiar Estado de Preparación
+              </label>
+<div class="relative">
+<select class="w-full pl-3.5 pr-10 py-2.5 bg-surface border border-outline-variant/40 rounded-lg font-label-md text-label-md text-on-surface font-semibold focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer">
+<option selected="" value="prep">● En preparación (Atelier activo)</option>
+<option value="recibido">○ Pedido Recibido</option>
+<option value="enviado">◎ Enviado / En Tránsito</option>
+<option value="entregado">✓ Entregado al Cliente</option>
+<option value="cancelado">✕ Cancelado</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+<!-- Order Garment Breakdown -->
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold mb-3 block">
+                Artículos en Atelier (3 prendas)
+              </span>
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant/20 hover:border-outline-variant/50 transition-colors bg-surface-container-lowest">
+<img class="w-12 h-14 object-cover rounded border border-outline-variant/30 shrink-0" data-alt="High-end emerald green structured blazer tailored from heavy wool, hanging on an atelier wooden rack with soft morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC0pHYOmcsqN4XTJbAJkjFmRRpX7G7v2W9Sc5ZCFdL5Nam2XO15MtUhVqDid6U0KKDzns3bfoErJ-FIz0q32uozH-wWSxrXFiZ4z0C7cZJO8ozy8pDQOPc1OPwGlOT7o_exnQQpLqMNGJ71eRwx-4Lc85wdjUSCSckn7Y841Pr2FKjl3Ef84SpM3CXel6IwPrkwyM5bVMYxYsV6t5UR90_uMLEPU_NWc6XC4FQeaK345xUikYx3CF_5w"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-semibold text-on-surface truncate">Blazer Estructurado Esmeralda</p>
+<p class="font-label-sm text-label-sm text-outline">Talla: 38 (M) • Esmeralda Imperial</p>
+<span class="inline-block mt-0.5 font-label-sm text-label-sm text-secondary font-medium">Corte &amp; Patrón completado</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-semibold text-on-surface">$210.00</span>
+<span class="block font-label-sm text-label-sm text-outline">x1</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant/20 hover:border-outline-variant/50 transition-colors bg-surface-container-lowest">
+<img class="w-12 h-14 object-cover rounded border border-outline-variant/30 shrink-0" data-alt="Tailored ivory pleated trousers displayed on a minimalist studio backdrop with editorial soft contrast shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoR6XwtQqBJkvkaZNcvZyM40MST0gf9GT3_5Bjkrx6tWR5MoDXvCuKbtrchhxKC2M1ZQo7rqYBmPrbo4vmLgfvv-65Je98Q_EkETODwoi734j89Opr7MpQO1B5YaxsGw6BuZdAwNc7gMklJ-Bfk-MrpTKNGzC-C2owbu5Bvh475F5XNrAcZGNKZLLCKoJmFIwfGaYJhzhvWb49ZV4XP0oh-MBUGTI_DOdq6QVT7StSW5TB6jpVHctWjQ"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-semibold text-on-surface truncate">Pantalón Sastre Plisado</p>
+<p class="font-label-sm text-label-sm text-outline">Talla: 36 (S) • Blanco Crudo</p>
+<span class="inline-block mt-0.5 font-label-sm text-label-sm text-secondary font-medium">En planchado &amp; acabado</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-semibold text-on-surface">$115.00</span>
+<span class="block font-label-sm text-label-sm text-outline">x1</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-3 p-2.5 rounded-lg border border-outline-variant/20 hover:border-outline-variant/50 transition-colors bg-surface-container-lowest">
+<img class="w-12 h-14 object-cover rounded border border-outline-variant/30 shrink-0" data-alt="Minimalist soft organic cotton t-shirt neatly folded in an atelier environment under bright clean daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8EVTXMvIcyeh5LsPZ-hh_hRD4cHITHg_tVTXnCCPIphOKy41-edF_fkxA9xVjikUVdfnI0tTIZwMjEZaFzFxPmOR71-QSeAORC2kuV9nFFRplO8lInRqBckrDGBnP5n3wmzkasipAzRzdBWqkD8jFjnZ4HzXXTB_m2MTovmgoGETCrPz3goiTpNiXdUfns2ZYhRn6JnyCRJj5naMAKaJGxH4cJ9-HmJ29fqbv9YhVDxZf-fNp8veHzg"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md font-semibold text-on-surface truncate">Camiseta Básica Seda-Algodón</p>
+<p class="font-label-sm text-label-sm text-outline">Talla: S • Marfil</p>
+<span class="inline-block mt-0.5 font-label-sm text-label-sm text-secondary font-medium">Empaque listo</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-semibold text-on-surface">$40.00</span>
+<span class="block font-label-sm text-label-sm text-outline">x1</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial Summary Box -->
+<div class="pt-4 border-t border-outline-variant/20 space-y-1.5 font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal prendas:</span>
+<span>$365.00 USD</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Envío asegurado:</span>
+<span class="text-secondary font-medium">Gratis (Campaña FW)</span>
+</div>
+<div class="flex justify-between font-label-lg text-label-lg font-bold text-on-surface pt-2 border-t border-outline-variant/20">
+<span>Total pagado:</span>
+<span class="text-primary font-headline-sm text-headline-sm">$365.00 USD</span>
+</div>
+</div>
+<!-- Action Buttons for Order -->
+<div class="pt-2 flex flex-col gap-2">
+<button class="w-full py-2.5 px-4 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-medium hover:bg-secondary transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="local_shipping">local_shipping</span>
+                Generar Etiqueta &amp; Notificar Envío
+              </button>
+<button class="w-full py-2.5 px-4 bg-surface-container text-on-surface-variant hover:text-primary rounded-lg font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="print">print</span>
+                Imprimir Albarán de Entrega
+              </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Subtle Admin Footer -->
+<footer class="px-8 py-3.5 border-t border-outline-variant/20 bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between text-outline font-label-sm text-label-sm shrink-0">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface tracking-wider uppercase">FASHION WORLD</span>
+<span>— Atelier Edition</span>
+<span class="mx-1">•</span>
+<span>Soporte Interno: atelier@fashionworld.internal</span>
+</div>
+<div class="mt-1 sm:mt-0">
+        Precios expresados en USD. Conexión segura TLS 1.3
+      </div>
+</footer>
+</div>
+</body></html>

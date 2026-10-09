@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crear Cuenta | Fashion World</title>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#404944",
+            "on-tertiary-fixed": "#1b1c1a",
+            "on-primary-fixed": "#002117",
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary": "#2d2e2c",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#474744",
+            "secondary-container": "#6cf8bb",
+            "on-secondary-fixed": "#002113",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#0b513d",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#e4e2de",
+            "outline-variant": "#bfc9c3",
+            "surface-dim": "#dcd9dd",
+            "tertiary-container": "#444441",
+            "inverse-surface": "#303033",
+            "on-secondary-container": "#00714d",
+            "surface-bright": "#fbf8fc",
+            "surface-container-high": "#eae7eb",
+            "secondary": "#006c49",
+            "error-container": "#ffdad6",
+            "surface-tint": "#2b6954",
+            "surface-variant": "#e4e1e6",
+            "on-primary-container": "#80bea6",
+            "on-background": "#1b1b1e",
+            "primary-fixed-dim": "#95d3ba",
+            "inverse-primary": "#95d3ba",
+            "background": "#fbf8fc",
+            "surface": "#fbf8fc",
+            "secondary-fixed": "#6ffbbe",
+            "surface-container-low": "#f6f2f7",
+            "on-tertiary-container": "#b2b1ae",
+            "tertiary-fixed-dim": "#c8c6c3",
+            "outline": "#707974",
+            "on-error": "#ffffff",
+            "on-surface": "#1b1b1e",
+            "surface-container": "#f0edf1",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-on-surface": "#f3f0f4",
+            "primary-container": "#064e3b",
+            "surface-container-highest": "#e4e1e6",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#b0f0d6",
+            "primary": "#003527",
+            "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "margin": "3rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-xs": "0.375rem",
+            "space-xl": "3.5rem",
+            "space-sm": "0.75rem",
+            "space-lg": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-display": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-display-mobile": ["Playfair Display"]
+          },
+          "fontSize": {
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "headline-sm": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-display-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- SHARED COMPONENT: TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/40">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 py-4">
+<!-- Brand Logo -->
+<a class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface hover:text-primary transition-colors duration-200" href="#">
+        Fashion World
+      </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary transition-colors duration-200" href="#">
+          Inicio
+        </a>
+<a class="text-on-surface-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary transition-colors duration-200" href="#">
+          Catálogo
+        </a>
+<a class="text-on-surface-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary transition-colors duration-200" href="#">
+          Colecciones
+        </a>
+<a class="text-on-surface-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary transition-colors duration-200" href="#">
+          Novedades
+        </a>
+</nav>
+<!-- Trailing Action Cluster & Search -->
+<div class="flex items-center space-x-6">
+<!-- Integrated Search on Right -->
+<div class="relative hidden sm:block w-48 lg:w-60">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded px-3 py-1.5 pl-8 font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:border-primary transition-colors" placeholder="Buscar..." type="text"/>
+<span class="material-symbols-outlined absolute left-2 top-2 text-outline text-[18px]">
+            search
+          </span>
+</div>
+<div class="flex items-center space-x-4">
+<!-- Person Icon (Active User Context) -->
+<a aria-label="Perfil de usuario" class="text-primary font-label-md text-label-md tracking-wider border-b-2 border-primary pb-1 flex items-center" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">
+              person
+            </span>
+</a>
+<!-- Shopping Bag Icon -->
+<a aria-label="Bolsa de compras" class="text-on-surface-variant hover:text-primary transition-colors duration-200 relative flex items-center" href="#">
+<span class="material-symbols-outlined text-[22px]">
+              shopping_bag
+            </span>
+<span class="absolute -top-1 -right-1.5 w-4 h-4 bg-primary text-on-primary font-label-sm text-[9px] flex items-center justify-center rounded-full">
+              0
+            </span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN REGISTRATION CANVAS (Split Screen Editorial Layout) -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-6 md:px-12 py-10 lg:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Column: Editorial Atmospheric Imagery & Brand Statement -->
+<div class="lg:col-span-5 hidden lg:flex flex-col space-y-8 sticky top-28">
+<div class="relative overflow-hidden rounded-lg bg-surface-container aspect-[3/4] border border-outline-variant/30 group">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="An elegant high-fashion model draped in an emerald green structured silk wool coat standing inside a minimalist warm stone atelier. Natural bright morning daylight pours through an arched window, creating delicate shadows on ivory textured walls. The aesthetic is warm editorial luxury with tranquil tones of cream, muted stone, and deep emerald green accents, capturing quiet haute couture poise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIGlSxrCwX6Fr1CQ2CtCtqUf5Y2RXXc7o8T8kcSlitGZn2hgLA670rFTP8tPDdFb1iwh8t2QbC737N_966q2JxGs0S5DA0qV4QMt67E-q2tBQgce_kWvQw5ZRQr4ht6pI6x8-DJBICBZxggaG_2sxFaZClY0UApcV9OgYgcckm9M3sm5TN8oLMAt65CCE3Ukrl71ex4UxdwW7LO2E3g6VqO9tmzVqNVKqPosm2wM2WevNpqy2VqXzqCA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent flex flex-col justify-end p-8 text-on-tertiary">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed mb-2">Membresía Exclusiva</span>
+<p class="font-headline-sm text-headline-sm italic font-normal leading-snug">
+              "El estilo es la armonía entre la serenidad interior y la expresión visible."
+            </p>
+<p class="font-label-sm text-label-sm tracking-wider mt-3 text-surface-variant">Atelier Fashion World • Edición 2025</p>
+</div>
+</div>
+<!-- Privilege Features / Editorial Badges -->
+<div class="grid grid-cols-2 gap-4 pt-2">
+<div class="p-4 bg-surface-container-low rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary mb-2 text-xl">loyalty</span>
+<h4 class="font-label-md text-label-md text-on-surface">Acceso Anticipado</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Preventa en nuevas colecciones cápsula y desfiles de temporada.</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary mb-2 text-xl">local_shipping</span>
+<h4 class="font-label-md text-label-md text-on-surface">Servicio Atelier</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Seguimiento detallado en tiempo real y devoluciones de cortesía.</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Registration Card / Form Container -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant/40 rounded-xl p-8 md:p-12 shadow-sm">
+<!-- Header & Instructions -->
+<div class="mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low border border-outline-variant/40 rounded-full mb-4">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant">Registro de Clientes</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-3 tracking-tight">
+            Únete a Fashion World
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Crea tu cuenta de cliente para disfrutar de una experiencia de compra personalizada, seguimiento de pedidos y acceso prioritario a nuevas colecciones.
+          </p>
+</div>
+<!-- The Register Form -->
+<form class="space-y-6" id="registerForm" novalidate="" onsubmit="return handleRegisterSubmit(event)">
+<!-- Field 1: Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="fullName">
+              Nombre completo <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 font-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary transition-colors duration-150" id="fullName" name="fullName" oninput="validateName()" placeholder="Ej. Constanza Silva" required="" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-outline text-[20px] transition-colors" id="nameStatusIcon">
+                person_outline
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-error mt-1.5 hidden flex items-center gap-1" id="nameError">
+<span class="material-symbols-outlined text-sm">error</span> Por favor, ingresa tu nombre y apellido.
+            </p>
+</div>
+<!-- Field 2: Email Address -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="email">
+              Correo electrónico <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 font-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary transition-colors duration-150" id="email" name="email" oninput="validateEmail()" placeholder="ejemplo@fashionworld.com" required="" type="email"/>
+<span class="material-symbols-outlined absolute right-3 top-3.5 text-outline text-[20px] transition-colors" id="emailStatusIcon">
+                mail
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-error mt-1.5 hidden flex items-center gap-1" id="emailError">
+<span class="material-symbols-outlined text-sm">error</span> Introduce una dirección de correo válida con formato correcto.
+            </p>
+</div>
+<!-- Field 3: Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="password">
+              Contraseña <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 pr-12 font-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary transition-colors duration-150" id="password" name="password" oninput="validatePassword()" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Mostrar u ocultar contraseña" class="absolute right-3 top-3 text-outline hover:text-on-surface p-0.5 focus:outline-none" onclick="togglePasswordVisibility('password', 'pwdToggleIcon')" type="button">
+<span class="material-symbols-outlined text-[20px]" id="pwdToggleIcon">
+                  visibility
+                </span>
+</button>
+</div>
+<!-- Explicit Password Requirements -->
+<div class="mt-2.5 p-3 bg-surface-container-low rounded border border-outline-variant/30 space-y-1.5">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant" id="req-length">
+<span class="material-symbols-outlined text-[16px] text-outline" id="req-length-icon">radio_button_unchecked</span>
+<span>Mínimo 8 caracteres</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant" id="req-complex">
+<span class="material-symbols-outlined text-[16px] text-outline" id="req-complex-icon">radio_button_unchecked</span>
+<span>Al menos una letra mayúscula o un número</span>
+</div>
+</div>
+</div>
+<!-- Field 4: Confirm Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="confirmPassword">
+              Confirmar contraseña <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-4 py-3 pr-12 font-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:border-primary transition-colors duration-150" id="confirmPassword" name="confirmPassword" oninput="validateConfirmPassword()" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Mostrar u ocultar confirmación de contraseña" class="absolute right-3 top-3 text-outline hover:text-on-surface p-0.5 focus:outline-none" onclick="togglePasswordVisibility('confirmPassword', 'confirmPwdToggleIcon')" type="button">
+<span class="material-symbols-outlined text-[20px]" id="confirmPwdToggleIcon">
+                  visibility
+                </span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-error mt-1.5 hidden flex items-center gap-1" id="confirmError">
+<span class="material-symbols-outlined text-sm">error</span> Las contraseñas no coinciden. Asegúrate de escribirlas idénticas.
+            </p>
+<p class="font-body-sm text-body-sm text-secondary mt-1.5 hidden flex items-center gap-1" id="confirmSuccess">
+<span class="material-symbols-outlined text-sm">check_circle</span> Las contraseñas coinciden correctamente.
+            </p>
+</div>
+<!-- Legal & Privacy Checkbox (Field 5) -->
+<div class="pt-2">
+<label class="flex items-start gap-3 cursor-pointer group">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-0 focus:ring-offset-0 transition-colors" id="termsAccepted" name="terms" onchange="validateTerms()" required="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed select-none">
+                Acepto los <a class="text-primary underline hover:text-secondary-fixed-dim transition-colors" href="#">Términos y Condiciones</a> y la <a class="text-primary underline hover:text-secondary-fixed-dim transition-colors" href="#">Política de Privacidad</a> de Fashion World.
+              </span>
+</label>
+<p class="font-body-sm text-body-sm text-error mt-1 hidden flex items-center gap-1" id="termsError">
+<span class="material-symbols-outlined text-sm">error</span> Debes aceptar los términos y condiciones para continuar.
+            </p>
+</div>
+<!-- Marketing/Runway Newsletter Checkbox (Field 6 - Optional) -->
+<div>
+<label class="flex items-start gap-3 cursor-pointer group">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant text-primary focus:ring-0 focus:ring-offset-0 transition-colors" id="newsletter" name="newsletter" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed select-none">
+                Deseo recibir invitaciones a desfiles y novedades exclusivas por correo.
+              </span>
+</label>
+</div>
+<!-- Primary Submit Button (Field 7: Deep Emerald Fill #064e3b) -->
+<div class="pt-4">
+<button class="w-full bg-[#064e3b] hover:bg-[#059669] text-[#faf9f6] py-3.5 px-6 rounded font-label-lg text-label-lg tracking-wider uppercase transition-all duration-200 active:scale-[0.99] flex items-center justify-center gap-2 shadow-sm" type="submit">
+<span>Crear Cuenta</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<!-- Field 8: Existing User Direct Link -->
+<div class="text-center pt-2">
+<p class="font-body-md text-body-md text-on-surface-variant">
+              ¿Ya tienes una cuenta? 
+              <a class="font-label-md text-label-md text-primary underline hover:text-secondary font-semibold transition-colors duration-150 ml-1" href="#">
+                Inicia sesión aquí
+              </a>
+</p>
+</div>
+</form>
+<!-- Dynamic Success Toast/Notice -->
+<div class="hidden mt-6 p-4 bg-secondary-container/20 border border-secondary text-primary rounded-lg flex items-center gap-3" id="formSuccessToast">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h5 class="font-label-md text-label-md font-bold">¡Bienvenido a Fashion World!</h5>
+<p class="font-body-sm text-body-sm">Tu cuenta de cliente ha sido registrada con éxito. Redirigiendo a tu espacio personal...</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- SHARED COMPONENT: Footer -->
+<footer class="docked full-width bottom bg-surface-container-low border-t border-outline-variant/30 mt-20">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col gap-12">
+<!-- Upper Section: Brand Essence & Editorial Links -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-2 space-y-4">
+<span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface block">
+            Fashion World
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+            Casa de moda contemporánea dedicada a la sofisticación estética, siluetas atemporales y prendas confeccionadas con materiales de máxima excelencia.
+          </p>
+</div>
+<div class="space-y-3">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Servicios &amp; Guías</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Atención al Cliente</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Guía de Tallas</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Envíos y Devoluciones</a></li>
+</ul>
+</div>
+<div class="space-y-3">
+<h4 class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Compromiso Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Sostenibilidad</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Términos y Condiciones</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="#">Privacidad</a></li>
+</ul>
+</div>
+</div>
+<!-- Separation Divider -->
+<div class="border-t border-outline-variant/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant">
+<p class="font-body-sm text-body-sm">
+          © 2025 Fashion World. Todos los derechos reservados. Precios expresados en USD.
+        </p>
+<div class="flex items-center space-x-6">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Edición Digital Global</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Micro-interactions & Validation Script -->
+<script>
+    function togglePasswordVisibility(fieldId, iconId) {
+      const field = document.getElementById(fieldId);
+      const icon = document.getElementById(iconId);
+      if (field.type === "password") {
+        field.type = "text";
+        icon.textContent = "visibility_off";
+      } else {
+        field.type = "password";
+        icon.textContent = "visibility";
+      }
+    }
+
+    function validateName() {
+      const name = document.getElementById('fullName').value.trim();
+      const error = document.getElementById('nameError');
+      const icon = document.getElementById('nameStatusIcon');
+      if (name.length < 3) {
+        error.classList.remove('hidden');
+        icon.classList.add('text-error');
+        icon.classList.remove('text-secondary');
+        return false;
+      } else {
+        error.classList.add('hidden');
+        icon.classList.remove('text-error');
+        icon.classList.add('text-secondary');
+        return true;
+      }
+    }
+
+    function validateEmail() {
+      const email = document.getElementById('email').value.trim();
+      const error = document.getElementById('emailError');
+      const icon = document.getElementById('emailStatusIcon');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (!emailRegex.test(email)) {
+        error.classList.remove('hidden');
+        icon.classList.add('text-error');
+        icon.classList.remove('text-secondary');
+        return false;
+      } else {
+        error.classList.add('hidden');
+        icon.classList.remove('text-error');
+        icon.classList.add('text-secondary');
+        return true;
+      }
+    }
+
+    function validatePassword() {
+      const pwd = document.getElementById('password').value;
+      const reqLengthIcon = document.getElementById('req-length-icon');
+      const reqComplexIcon = document.getElementById('req-complex-icon');
+
+      const isLengthValid = pwd.length >= 8;
+      const isComplexValid = /[A-Z0-9]/.test(pwd);
+
+      if (isLengthValid) {
+        reqLengthIcon.textContent = "check_circle";
+        reqLengthIcon.classList.remove('text-outline');
+        reqLengthIcon.classList.add('text-secondary');
+      } else {
+        reqLengthIcon.textContent = "radio_button_unchecked";
+        reqLengthIcon.classList.add('text-outline');
+        reqLengthIcon.classList.remove('text-secondary');
+      }
+
+      if (isComplexValid) {
+        reqComplexIcon.textContent = "check_circle";
+        reqComplexIcon.classList.remove('text-outline');
+        reqComplexIcon.classList.add('text-secondary');
+      } else {
+        reqComplexIcon.textContent = "radio_button_unchecked";
+        reqComplexIcon.classList.add('text-outline');
+        reqComplexIcon.classList.remove('text-secondary');
+      }
+
+      validateConfirmPassword();
+      return isLengthValid && isComplexValid;
+    }
+
+    function validateConfirmPassword() {
+      const pwd = document.getElementById('password').value;
+      const confirmPwd = document.getElementById('confirmPassword').value;
+      const error = document.getElementById('confirmError');
+      const success = document.getElementById('confirmSuccess');
+
+      if (!confirmPwd) {
+        error.classList.add('hidden');
+        success.classList.add('hidden');
+        return false;
+      }
+
+      if (pwd === confirmPwd && pwd.length >= 8) {
+        error.classList.add('hidden');
+        success.classList.remove('hidden');
+        return true;
+      } else {
+        error.classList.remove('hidden');
+        success.classList.add('hidden');
+        return false;
+      }
+    }
+
+    function validateTerms() {
+      const checkbox = document.getElementById('termsAccepted');
+      const error = document.getElementById('termsError');
+      if (!checkbox.checked) {
+        error.classList.remove('hidden');
+        return false;
+      } else {
+        error.classList.add('hidden');
+        return true;
+      }
+    }
+
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+      const validName = validateName();
+      const validEmail = validateEmail();
+      const validPwd = validatePassword();
+      const validConfirm = validateConfirmPassword();
+      const validTerms = validateTerms();
+
+      if (validName && validEmail && validPwd && validConfirm && validTerms) {
+        const toast = document.getElementById('formSuccessToast');
+        toast.classList.remove('hidden');
+        document.getElementById('registerForm').reset();
+        
+        // Reset requirement badges
+        document.getElementById('req-length-icon').textContent = "radio_button_unchecked";
+        document.getElementById('req-length-icon').classList.add('text-outline');
+        document.getElementById('req-length-icon').classList.remove('text-secondary');
+        
+        document.getElementById('req-complex-icon').textContent = "radio_button_unchecked";
+        document.getElementById('req-complex-icon').classList.add('text-outline');
+        document.getElementById('req-complex-icon').classList.remove('text-secondary');
+        document.getElementById('confirmSuccess').classList.add('hidden');
+        
+        setTimeout(() => {
+          toast.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+      return false;
+    }
+  </script>
+</body></html>

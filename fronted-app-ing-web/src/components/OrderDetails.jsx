@@ -1,0 +1,6 @@
+import { Link, ProductImage, Badge } from './UI'
+import { date, money } from '../services/format'
+
+export function OrderDetails({ order }) {
+  return <><div className="section-heading"><div><span className="eyebrow">Referencia #{order.id}</span><h2>Detalle del pedido</h2></div><Badge>{order.estado}</Badge></div><p className="small muted">Registrado el {date(order.fechaCreacion)}</p><div className="order-lines">{order.detalles.map(detail => <article className="order-line" key={detail.id}><ProductImage src={detail.producto.imagenUrl} alt={detail.producto.nombre} /><div><span className="eyebrow">{detail.producto.categoria || 'Colección'}</span><h3><Link href={`/productos/${detail.producto.id}`}>{detail.producto.nombre}</Link></h3><p className="small muted">Talla: {detail.producto.talla || '—'} · {detail.producto.color || 'Color no especificado'}</p><p className="small">{detail.cantidad} unidades × {money(detail.precioUnitario)}</p></div><strong>{money(detail.subtotal)}</strong></article>)}</div><div className="summary-total"><span>Total del pedido</span><strong>{money(order.total)}</strong></div><p className="small muted">Importes registrados por el servidor. El pedido no acredita un pago ni un envío.</p></>
+}

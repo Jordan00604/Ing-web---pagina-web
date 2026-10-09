@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blazer Estructurado Esmeralda | Fashion World</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Verbatim Tailwind Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#e4e2de",
+            "on-primary-fixed-variant": "#0b513d",
+            "secondary-fixed-dim": "#4edea3",
+            "primary-fixed-dim": "#95d3ba",
+            "secondary": "#006c49",
+            "background": "#fbf8fc",
+            "surface-container-low": "#f6f2f7",
+            "on-surface": "#1b1b1e",
+            "tertiary": "#2d2e2c",
+            "outline": "#707974",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#fbf8fc",
+            "on-surface-variant": "#404944",
+            "on-tertiary-fixed-variant": "#474744",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#6ffbbe",
+            "primary-container": "#064e3b",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#b0f0d6",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-surface": "#303033",
+            "surface-dim": "#dcd9dd",
+            "on-tertiary-container": "#b2b1ae",
+            "on-secondary-container": "#00714d",
+            "surface-variant": "#e4e1e6",
+            "on-tertiary-fixed": "#1b1c1a",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#c8c6c3",
+            "on-primary-fixed": "#002117",
+            "secondary-container": "#6cf8bb",
+            "inverse-on-surface": "#f3f0f4",
+            "outline-variant": "#bfc9c3",
+            "on-background": "#1b1b1e",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#fbf8fc",
+            "on-secondary-fixed": "#002113",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "tertiary-container": "#444441",
+            "surface-container-highest": "#e4e1e6",
+            "primary": "#003527",
+            "surface-container-high": "#eae7eb",
+            "inverse-primary": "#95d3ba",
+            "on-primary-container": "#80bea6",
+            "surface-container": "#f0edf1",
+            "surface-tint": "#2b6954"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.375rem",
+            "margin": "3rem",
+            "space-xl": "3.5rem",
+            "space-sm": "0.75rem",
+            "space-md": "1.25rem"
+          },
+          "fontFamily": {
+            "headline-lg": [
+              "Playfair Display"
+            ],
+            "label-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-sm": [
+              "Playfair Display"
+            ],
+            "headline-display-mobile": [
+              "Playfair Display"
+            ],
+            "headline-lg-mobile": [
+              "Playfair Display"
+            ],
+            "headline-md": [
+              "Playfair Display"
+            ],
+            "body-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "body-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-display": [
+              "Playfair Display"
+            ],
+            "label-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "label-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "body-md": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "headline-lg": [
+              "40px",
+              {
+                "lineHeight": "48px",
+                "letterSpacing": "-0.015em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.06em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-sm": [
+              "22px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-display-mobile": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg-mobile": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-md": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "fontWeight": "500"
+              }
+            ],
+            "body-sm": [
+              "13px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "body-lg": [
+              "18px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-display": [
+              "56px",
+              {
+                "lineHeight": "64px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.08em",
+                "fontWeight": "500"
+              }
+            ],
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "15px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+<!-- Shared Component: TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/85 backdrop-blur-md dark:bg-surface/85 border-b border-outline-variant/40 dark:border-outline/30">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 py-4">
+<!-- Brand Logo -->
+<a class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface dark:text-inverse-on-surface font-headline-sm" href="#">
+        Fashion World
+      </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Inicio</a>
+<a class="text-primary dark:text-primary-fixed font-label-md text-label-md tracking-wider border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Catálogo</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Colecciones</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Novedades</a>
+</nav>
+<!-- Right Trailing Actions & Search -->
+<div class="flex items-center gap-5">
+<div class="relative hidden sm:block w-48">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 rounded px-3 py-1.5 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary placeholder:text-outline/70" placeholder="Buscar..." type="text"/>
+<button aria-label="Buscar" class="absolute right-2 top-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Cuenta" class="p-1.5 text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button aria-label="Bolsa de compra" class="p-1.5 text-on-surface hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute top-1 right-0.5 w-2 h-2 rounded-full bg-primary"></span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Container -->
+<main class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-20">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="mb-8">
+<ol class="flex items-center flex-wrap gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<li>
+<a class="hover:text-primary transition-colors" href="#">Inicio</a>
+</li>
+<li class="flex items-center text-outline">
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</li>
+<li>
+<a class="hover:text-primary transition-colors" href="#">Catálogo</a>
+</li>
+<li class="flex items-center text-outline">
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</li>
+<li>
+<a class="hover:text-primary transition-colors" href="#">Chaquetas</a>
+</li>
+<li class="flex items-center text-outline">
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</li>
+<li aria-current="page" class="text-on-surface font-medium truncate max-w-xs sm:max-w-none">
+          Chaqueta Blazer Verde Esmeralda
+        </li>
+</ol>
+</nav>
+<!-- Split Screen Editorial Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start">
+<!-- Left Column: Gallery (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col-reverse md:flex-row gap-4 items-start">
+<!-- Thumbnail Bar (Vertical on Desktop, Horizontal on Mobile) -->
+<div class="flex md:flex-col gap-3 w-full md:w-20 overflow-x-auto md:overflow-visible shrink-0 pb-2 md:pb-0">
+<button class="group relative aspect-[3/4] w-16 md:w-20 rounded border-2 border-primary overflow-hidden focus:outline-none transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Editorial close up front profile of an emerald green structured blazer on a high fashion model walking a runway with diffused warm gallery lighting and architectural neutral backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTzLIel60QGH1lmA7siol1MQ2Z5n6tbiQg_WS7V0g9DF98vSANBXev_jiWEQnXF_PAkBBHV4Mv7cDG6eL6WSvdnle0UUUeUCg9rkyjYxhxuh1FKR-qsC4xy6Bc8IU4Xv-gmsNhn9L-9je_GFlMmECOrkvJrpm4JNZSFE2xkMT6dLoMYF14Bec3h4IOvJNTwknRrR4iGuwy1wZuouC98KJ1LC8rkqq2uIB40hQ7RgbbcGfOJEFEiw_tPw"/>
+</button>
+<button class="group relative aspect-[3/4] w-16 md:w-20 rounded border border-outline-variant/60 hover:border-on-surface overflow-hidden focus:outline-none transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Extreme macro texture photograph of natural organic emerald green linen fabric showcasing artisanal weave patterns, horn button details, and fine stitching." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAOiv7f08u35sH0YhGxIO7YDywtYKASTK_GKo5f9kHG5NXOVSYyzEea4w69gB71CDgLkFc1FOduZQLyygeBp-JJoaT0aNY7D6h_lZmFRuxmNzaz0u-CbTnIxCVpbGBwDaTB-3H08A-YkrmhHXv_nbiO109SXCUr09hFsh_ddNT0U34R8i-I9bMuym47tpuyV-6yzy5X22gQaMjul3i1T5v4A9HEh4o0nIRW2nTr9ePR3kWo6BzXaLrTg"/>
+</button>
+<button class="group relative aspect-[3/4] w-16 md:w-20 rounded border border-outline-variant/60 hover:border-on-surface overflow-hidden focus:outline-none transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Rear angle high fashion editorial shot of the tailored emerald blazer highlighting the structured shoulder line and clean drape against minimal warm beige studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3-VEjTVdrkw7WL2YKkE46Mw1-Ou7lYcoGuOvT7rDSKWPL8k5-7vz7fP1So2FkVpgThjCl_COnw2q-Skl8aOqdO6rmD8h08lIvTaW1BeZ0scpjBxpB00UfaA3OegTN2RBaYeREfPlnd35rQEym8lLifAlTjaoCpEccFYBnZ7gQocBDtbA9ECQ-KxtAWV_XH2_TGQLc_OlzNNdFmbSW-oj7fRwy_60QMIPpTiWc9ypE9iC_HBR5WTyDGA"/>
+</button>
+<button class="group relative aspect-[3/4] w-16 md:w-20 rounded border border-outline-variant/60 hover:border-on-surface overflow-hidden focus:outline-none transition-all" type="button">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Dynamic side angle view of a model in motion wearing an emerald tailored jacket with hands in pockets in a minimalist sunlit atelier space with gentle ivory shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM_jnyTaDewydColTI_RpxpBFTxlSwQxurAhPG8fI_4WDu4Qf07c4yfPBTu9uAaF9Q7h3Gzd-BQ51iqocf1Z6JBNEDBrveUIdIyWDRUxD4hQlCWez9Xmr94cRfP3FK4lAtb_7JbgylUutWFY7X5wbZu5Gi1egEdqZH34GfOPZtF8SUnKj8wGpxoDjIWAU6L2fXQyZ-iNbt_rnxTSkn5vL55-8N5Knc5tJ_Z2qZBiA39GHXMmNVTU_4WQ"/>
+</button>
+</div>
+<!-- Main Big High-Res Image Display -->
+<div class="w-full relative aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low border border-outline-variant/30 group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Full length editorial fashion photograph of a runway model wearing a tailored deep emerald green structured blazer paired with ivory trousers in an avant-garde architectural space filled with soft diffused daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtV-nirQ2R1mRObMeA9d91J2ahjZaq4QZJMT8UHRgZJH5c_wLO4yCw9ZLmdKmmjaLatPCoomTqrlDJauPltLpgwTedGHY36Vw0_6oONIpF5Cw5wtiLyKSDJRFHeICDVYP_InpBD2bCQu21LnfXBZReAWv_Jt0W40WtCBp9_hQg2ECM-yAaNI4DVO49Fp9AocAwE82ZeiMQRtxufPL7QTGHjpQSBvTWt3hFn92SjLN5YgswC4d2tnPp2g"/>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded text-on-surface font-label-sm text-label-sm uppercase tracking-widest border border-outline-variant/30">
+            Pieza de Autor
+          </div>
+<button aria-label="Ampliar imagen" class="absolute bottom-4 right-4 bg-surface-container-lowest/80 hover:bg-surface-container-lowest p-2.5 rounded-full text-on-surface shadow-sm transition-all">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Sticky Purchasing Panel (5 Cols) -->
+<div class="lg:col-span-5 sticky top-24 space-y-6">
+<!-- Collection Reference & Title -->
+<div class="space-y-2 border-b border-outline-variant/30 pb-5">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-widest">
+            Colección Otoño / Invierno 2025
+          </p>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            Blazer Estructurado Esmeralda
+          </h1>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium">
+              $145.00 USD
+            </span>
+<!-- Real-time Stock Badge -->
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-50 text-primary-container border border-primary-container/20">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold">En stock (8 unidades disponibles)</span>
+</div>
+</div>
+</div>
+<!-- Color Selector -->
+<div class="space-y-3">
+<div class="flex justify-between items-center font-label-md text-label-md">
+<span class="text-on-surface font-medium">Color:</span>
+<span class="text-on-surface-variant" id="selected-color-label">Verde Esmeralda</span>
+</div>
+<div class="flex items-center gap-3">
+<!-- Active Emerald -->
+<button aria-label="Verde Esmeralda" class="w-8 h-8 rounded-full p-0.5 ring-2 ring-primary ring-offset-2 ring-offset-background transition-all focus:outline-none" type="button">
+<span class="block w-full h-full rounded-full bg-primary-container"></span>
+</button>
+<!-- Negro Carbón -->
+<button aria-label="Negro Carbón" class="w-8 h-8 rounded-full p-0.5 hover:ring-2 hover:ring-outline-variant ring-offset-2 ring-offset-background transition-all focus:outline-none" type="button">
+<span class="block w-full h-full rounded-full bg-[#18181b]"></span>
+</button>
+<!-- Marfil Cálido -->
+<button aria-label="Marfil Cálido" class="w-8 h-8 rounded-full p-0.5 hover:ring-2 hover:ring-outline-variant ring-offset-2 ring-offset-background transition-all focus:outline-none" type="button">
+<span class="block w-full h-full rounded-full bg-[#f4f1ea] border border-outline-variant/60"></span>
+</button>
+</div>
+</div>
+<!-- Size Selector -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface font-medium">Talla:</span>
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="straighten">straighten</span>
+              Guía de tallas
+            </button>
+</div>
+<div class="grid grid-cols-4 gap-2.5">
+<!-- XS: Disabled -->
+<button class="relative py-2.5 rounded border border-outline-variant/40 bg-surface-container-high/40 text-outline-variant font-label-md text-label-md cursor-not-allowed overflow-hidden" disabled="" type="button">
+<span class="opacity-50">XS</span>
+<span class="absolute inset-0 flex items-center justify-center">
+<span class="w-full border-t border-outline-variant/60 rotate-45 transform"></span>
+</span>
+</button>
+<!-- S: Available & Selected -->
+<button class="py-2.5 rounded border-2 border-on-surface bg-on-surface text-surface font-label-md text-label-md font-semibold transition-all" type="button">
+              S
+            </button>
+<!-- M: Available -->
+<button class="py-2.5 rounded border border-outline-variant hover:border-on-surface text-on-surface font-label-md text-label-md transition-colors" type="button">
+              M
+            </button>
+<!-- L: Available -->
+<button class="py-2.5 rounded border border-outline-variant hover:border-on-surface text-on-surface font-label-md text-label-md transition-colors" type="button">
+              L
+            </button>
+</div>
+</div>
+<!-- Quantity & Primary Purchase Buttons -->
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3">
+<!-- Counter Selector -->
+<div class="flex items-center border border-outline-variant rounded bg-surface-container-lowest px-2 py-1 h-12 w-32 justify-between">
+<button aria-label="Disminuir cantidad" class="text-on-surface-variant hover:text-primary p-1" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="font-label-md text-label-md text-on-surface font-semibold px-2">1</span>
+<button aria-label="Aumentar cantidad" class="text-on-surface-variant hover:text-primary p-1" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+<!-- Primary Add to Cart Button -->
+<button class="flex-1 h-12 bg-primary-container text-on-primary hover:bg-secondary transition-colors duration-200 active:scale-[0.99] rounded font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="shopping_bag">shopping_bag</span>
+              Añadir al carrito
+            </button>
+</div>
+<!-- Wishlist Button -->
+<button class="w-full h-12 border border-outline-variant hover:border-on-surface text-on-surface rounded font-label-md text-label-md tracking-wider flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+            Guardar en lista de deseos
+          </button>
+</div>
+<!-- Accordions / Information Modules -->
+<div class="border-t border-outline-variant/30 pt-4 divide-y divide-outline-variant/30">
+<!-- Accordion Item 1 -->
+<details class="group py-3" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none text-on-surface font-label-md text-label-md font-semibold">
+<span>Descripción y corte</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="pt-3 font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Diseñado con una silueta relajada pero arquitectónica, este blazer presenta solapas de muesca sobredimensionadas, hombreras sutiles y bolsillos ribeteados con solapa. Su caída estructurada y forro interior de satén garantizan una presencia imponente sin perder ligereza.
+            </div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group py-3">
+<summary class="flex justify-between items-center cursor-pointer list-none text-on-surface font-label-md text-label-md font-semibold">
+<span>Composición y cuidados</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="pt-3 font-body-sm text-body-sm text-on-surface-variant leading-relaxed space-y-1">
+<p>• Exterior: 100% Lino orgánico con acabado texturado.</p>
+<p>• Forro interior: 100% Viscosa transpirable.</p>
+<p>• Lavado exclusivamente en seco por profesionales.</p>
+<p>• Planchar a baja temperatura con paño de protección.</p>
+</div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group py-3">
+<summary class="flex justify-between items-center cursor-pointer list-none text-on-surface font-label-md text-label-md font-semibold">
+<span>Envíos y devoluciones</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="pt-3 font-body-sm text-body-sm text-on-surface-variant leading-relaxed space-y-1">
+<p>• Envío estándar gratuito en pedidos superiores a $200 USD (3-5 días laborables).</p>
+<p>• Envío exprés disponible en el checkout.</p>
+<p>• Devoluciones y cambios sin coste dentro de los primeros 30 días naturales posteriores a la entrega.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Bottom Section: Completa tu estilo (Cross-selling Bento/Editorial Grid) -->
+<section class="mt-28 border-t border-outline-variant/30 pt-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-1">Lookbook Curado</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Completa tu estilo</h2>
+</div>
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors flex items-center gap-1" href="#">
+          Ver colección completa
+          <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Rec Item 1 -->
+<article class="group flex flex-col">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low border border-outline-variant/20 mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Editorial fashion still life of tailored wide-leg trousers in deep emerald green linen, styled cleanly against a minimalist neutral studio surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCUHbm9Mg5d5o201-ovU6eyGfkjbDlH11cK7iRq1WeCzD5vhZyFhQcDK2Yg8bhCksd39Zc0AgYW1Odtcna46qE5NMjsdC2U-MWeZuaEBaBFh5iCBG291phr6zTksFg8i9noM6me-jUuyEjOVRw2Zsdz29ZaSDys8FG4aLIGpyJ11ZJuqQ1ljIRQaGK89Su5LGnprfJz428qw9rL55JdCKuI_fO6bs9KJZRx9pzzgDELZcI8VM0YxmR-w"/>
+<button aria-label="Guardar producto" class="absolute top-3 right-3 p-2 bg-surface-container-lowest/80 rounded-full text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase">Pantalones</p>
+<h3 class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Pantalón Sastre Plisado Esmeralda</h3>
+<p class="font-body-md text-body-md font-semibold text-on-surface">$115.00 USD</p>
+</div>
+</article>
+<!-- Rec Item 2 -->
+<article class="group flex flex-col">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low border border-outline-variant/20 mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Minimalist high end editorial apparel photograph of a refined ivory silk sleeveless top on a mannequin with sculptural morning lighting and subtle organic shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5n61aZiQG4lfuWF-ttGY_6eyxByPeQD3oWfKCCyclI0XhPsyZ1jg1G9ZzCeputiRw7JMWz2chqm_DDxbM8_S288OL60RXEPVm4AltVVebcDGpbx_EyZ7gCTTtUvy482_jveKVvaHtaxagm5Xs-coRZpG3GC_tViJhzaVTk1-5AiBbmiVDwxOsAo6S5Sx7jlfrSGs9m3Xb37P_gaY_WzmJ83gVmQTGvNGptpaTt2MPiSSoGRuv9Kppmw"/>
+<button aria-label="Guardar producto" class="absolute top-3 right-3 p-2 bg-surface-container-lowest/80 rounded-full text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase">Básicos de Lujo</p>
+<h3 class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Top Sin Mangas Seda Marfil</h3>
+<p class="font-body-md text-body-md font-semibold text-on-surface">$68.00 USD</p>
+</div>
+</article>
+<!-- Rec Item 3 -->
+<article class="group flex flex-col">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low border border-outline-variant/20 mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Editorial product photograph of sleek black pointed-toe leather ankle boots with delicate sculptural heel positioned on a pale stone pedestal in an art gallery atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAluUZemlV9fPKkfFZ2eUQED8hSHMal7pnkUanxZP2dqY5vbj69Fm_sN_R5O-Jta2FjE4HhFPO8wHsnyhu8iESE5XARXArNzGq6zf3ehCD6Oqao38PtTJw5KrDX5bvZO82HyEKLbhtSwhbUF0QE24vLQnelEN2hSjdeEoDDgOo-JZ27xQjHetAD04VUIhWF3579MGRMaM62RTbU4O4gu_WLqea9xHQpTMvFo__-45kffOi9Dk_VLFVNGA"/>
+<button aria-label="Guardar producto" class="absolute top-3 right-3 p-2 bg-surface-container-lowest/80 rounded-full text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="space-y-1">
+<p class="font-label-sm text-label-sm text-outline uppercase">Calzado</p>
+<h3 class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Botines de Cuero Punta Fina</h3>
+<p class="font-body-md text-body-md font-semibold text-on-surface">$185.00 USD</p>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Shared Component: Footer -->
+<footer class="docked full-width bottom bg-surface-container-low dark:bg-surface-container border-t border-outline-variant/30 dark:border-outline/20">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface dark:text-inverse-on-surface block">
+            Fashion World
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline mt-1">
+            Elegancia contemporánea y artesanía consciente para un estilo atemporal.
+          </p>
+</div>
+<div class="flex items-center gap-6">
+<a aria-label="Instagram" class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Instagram</span>
+</a>
+<a aria-label="Pinterest" class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Pinterest</span>
+</a>
+<a aria-label="Vogue" class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Editorial</span>
+</a>
+</div>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-3 pt-4 border-t border-outline-variant/20">
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Atención al Cliente</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Guía de Tallas</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Envíos y Devoluciones</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Sostenibilidad</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Términos y Condiciones</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Privacidad</a>
+</div>
+<div class="flex flex-col sm:flex-row justify-between items-center text-outline font-label-sm text-label-sm pt-4 border-t border-outline-variant/10">
+<p>© 2025 Fashion World. Todos los derechos reservados. Precios expresados en USD.</p>
+<p class="mt-2 sm:mt-0">Diseñado con dedicación atelier</p>
+</div>
+</div>
+</footer>
+</body></html>

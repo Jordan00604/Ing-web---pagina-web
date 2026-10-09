@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confirmación de Pedido — Fashion World</title>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#6cf8bb",
+            "on-surface": "#1b1b1e",
+            "secondary-fixed": "#6ffbbe",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#00714d",
+            "primary-container": "#064e3b",
+            "on-secondary": "#ffffff",
+            "secondary": "#006c49",
+            "on-primary-fixed-variant": "#0b513d",
+            "on-primary-fixed": "#002117",
+            "tertiary": "#2d2e2c",
+            "on-tertiary-fixed": "#1b1c1a",
+            "surface-dim": "#dcd9dd",
+            "inverse-surface": "#303033",
+            "inverse-on-surface": "#f3f0f4",
+            "on-surface-variant": "#404944",
+            "on-background": "#1b1b1e",
+            "surface-container-highest": "#e4e1e6",
+            "on-secondary-fixed-variant": "#005236",
+            "surface-container": "#f0edf1",
+            "primary": "#003527",
+            "surface-tint": "#2b6954",
+            "on-primary-container": "#80bea6",
+            "on-tertiary-fixed-variant": "#474744",
+            "on-secondary-fixed": "#002113",
+            "tertiary-fixed-dim": "#c8c6c3",
+            "inverse-primary": "#95d3ba",
+            "on-tertiary-container": "#b2b1ae",
+            "tertiary-container": "#444441",
+            "surface-container-low": "#f6f2f7",
+            "background": "#fbf8fc",
+            "secondary-fixed-dim": "#4edea3",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "outline": "#707974",
+            "surface-variant": "#e4e1e6",
+            "primary-fixed-dim": "#95d3ba",
+            "outline-variant": "#bfc9c3",
+            "tertiary-fixed": "#e4e2de",
+            "surface-bright": "#fbf8fc",
+            "surface": "#fbf8fc",
+            "surface-container-high": "#eae7eb",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#b0f0d6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "space-xl": "3.5rem",
+            "margin": "3rem",
+            "space-md": "1.25rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.375rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-display-mobile": ["Playfair Display"],
+            "headline-display": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-display-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "headline-sm": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container min-h-screen flex flex-col justify-between">
+<!-- TopNavBar (Shared Component) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/85 backdrop-blur-md dark:bg-surface/85 border-b border-outline-variant/40 dark:border-outline/30">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-12 py-4">
+<!-- Brand Logo -->
+<a class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface dark:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">
+        Fashion World
+      </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Inicio</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Catálogo</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Colecciones</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md tracking-wider pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Novedades</a>
+</nav>
+<!-- Right Hand Actions: Search and Trailing Icons -->
+<div class="flex items-center gap-5">
+<div class="relative hidden sm:block">
+<input class="w-56 bg-surface-container-lowest border border-outline-variant/60 rounded px-3 py-1.5 pl-8 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container transition-colors duration-200" placeholder="Buscar prenda o referencia..." type="text"/>
+<span class="material-symbols-outlined text-outline text-[18px] absolute left-2.5 top-1/2 -translate-y-1/2" data-icon="search">search</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface">
+<button aria-label="Cuenta de usuario" class="p-1 hover:text-primary transition-colors duration-200 scale-[0.99] active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+</button>
+<button aria-label="Bolsa de compra" class="p-1 hover:text-primary transition-colors duration-200 scale-[0.99] active:scale-95 relative" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-primary-container rounded-full"></span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas: Order Confirmation Experience -->
+<main class="flex-grow py-space-xl px-6 md:px-12 max-w-5xl mx-auto w-full">
+<!-- Hero Confirmation Banner -->
+<section class="text-center max-w-2xl mx-auto mb-16">
+<!-- Refined Emblem -->
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary-container/30 border border-secondary-container/60 mb-6 text-primary-container">
+<span class="material-symbols-outlined text-[32px]" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<!-- Superior Badge -->
+<div class="mb-3">
+<span class="inline-block px-3 py-1 bg-surface-container text-primary-container border border-outline-variant/50 rounded font-label-sm text-label-sm tracking-widest uppercase">
+          ORDEN REGISTRADA CON ÉXITO
+        </span>
+</div>
+<!-- Editorial Headline -->
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-4">
+        ¡Gracias por tu compra, Elena!
+      </h1>
+<!-- Atelier Peace-of-Mind Narrative -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+        Hemos recibido tu solicitud de pedido. Nuestro atelier comenzará a preparar tus piezas con dedicación artesanal y rigor en cada detalle.
+      </p>
+</section>
+<!-- Main Detail & Tracking Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+<!-- Left Column: Garments & Items List (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6 md:p-8">
+<div class="flex items-center justify-between pb-6 mb-6 border-b border-outline-variant/30">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Detalle del Pedido</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Prendas Seleccionadas (3)</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Colección Atelier 2025</span>
+</div>
+<!-- Product Items -->
+<ul class="divide-y divide-outline-variant/20">
+<!-- Item 1 -->
+<li class="py-5 flex gap-5 items-center group">
+<div class="w-20 h-26 flex-shrink-0 bg-surface-container rounded overflow-hidden">
+<img class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook studio photograph of a bespoke structured emerald green women's wool blazer on a clean neutral ivory podium with diffused high-end daylight, elegant silhouette, high fashion minimalism with pristine tailoring textures and quiet luxury mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCjHuc5LZNM33plWSMs7f8UXhJRHgMEsM_wPuXJHT-5zSBdi4q6bd93OmUJT6xuefx6FHZi_SsPiZyK1m0Jrr8Mcyld1hUIhowGS_C3lsU4R7efjjxU-zxnu8LP8avVOwAWesy6JvUgqgO1mN3uREQ5IIhJLUvOCyXwBXfv9__3kvSFSrDA5oSQwylUQG28Y2XyyZWRQcZ-fhXmy85eLo7fnoF9QSrATRnVz9zfUBYQLkJTID-5UOlVA"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-start gap-2">
+<div>
+<h3 class="font-body-md text-body-md font-semibold text-on-surface truncate">Blazer Estructurado Esmeralda</h3>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Talla S · Verde Esmeralda</p>
+</div>
+<span class="font-body-md text-body-md font-semibold text-on-surface whitespace-nowrap">$145.00 USD</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-outline text-label-sm font-label-sm">
+<span>Cantidad: 1 ud</span>
+<span class="text-secondary font-medium">Confección lista</span>
+</div>
+</div>
+</li>
+<!-- Item 2 -->
+<li class="py-5 flex gap-5 items-center group">
+<div class="w-20 h-26 flex-shrink-0 bg-surface-container rounded overflow-hidden">
+<img class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" data-alt="Editorial studio portrait of tailored emerald green pleated trousers meticulously folded against an ivory textured linen canvas, high contrast directional natural soft shadows, premium couture finishing with organic draping aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-hJybyj78SsrkBQyk1FQxjg7E1e_cAob-jOwtjcOh-IQ6QlilxC8bxlTHiQxuEQ9PgKw830uzifb8oT2OzUvcbNtq_NP7aXaduRf_0Pc0uvMaTXJXdqxyMwusB9EOFWuTwvbkqOzLE-iIZgTzcURyfMo2hQfNS5-csjtDm4hi4ZQoAgxBEDnyhNxDSRlWfRSuGG-Iw9MsJWn7NuW9FkOEfC2bZq8wBRrgUV08RRBsXEDIGKiEYVLE4Q"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-start gap-2">
+<div>
+<h3 class="font-body-md text-body-md font-semibold text-on-surface truncate">Pantalón Sastre Plisado Esmeralda</h3>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Talla M · Verde Esmeralda</p>
+</div>
+<span class="font-body-md text-body-md font-semibold text-on-surface whitespace-nowrap">$115.00 USD</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-outline text-label-sm font-label-sm">
+<span>Cantidad: 1 ud</span>
+<span class="text-secondary font-medium">Confección lista</span>
+</div>
+</div>
+</li>
+<!-- Item 3 -->
+<li class="py-5 flex gap-5 items-center group">
+<div class="w-20 h-26 flex-shrink-0 bg-surface-container rounded overflow-hidden">
+<img class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist fashion still life showing two premium ivory white Peruvian pima cotton basic t-shirts with refined neckline stitch details on a clean warm cream stone surface under soft ambient daylight, serene luxury wardrobe essentials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt5w68D1K6hOSLbK2arX1WlikP0Zs3qf0vJkfvFsI1tQE47y38owySCaT44LlSSVbE5c-yGvKuaZacLFZTlQMn1sf3QQ6b2wwTOqe21lyCuxMJmvUIGeIxRegqUsp1Gw6F99R15UeIupDTfxMb0mGxks_quZxMK39PIDj6ujZNwGdVfZNZw624uO_50w1xm8RfrPHEnT8gxMf9HiVN6JXXAA8V-FQ18bekrK5m0tSXl_zv1q5GJAkfbw"/>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex justify-between items-start gap-2">
+<div>
+<h3 class="font-body-md text-body-md font-semibold text-on-surface truncate">Camiseta Básica de Algodón Pima</h3>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Talla S · Blanco Marfil</p>
+</div>
+<span class="font-body-md text-body-md font-semibold text-on-surface whitespace-nowrap">$90.00 USD</span>
+</div>
+<div class="mt-2 flex items-center justify-between text-outline text-label-sm font-label-sm">
+<span>Cantidad: 2 uds ($45.00 c/u)</span>
+<span class="text-secondary font-medium">Confección lista</span>
+</div>
+</div>
+</li>
+</ul>
+<!-- Shipping & Delivery Note Box -->
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex items-start gap-4 bg-surface-container-low/50 p-4 rounded">
+<span class="material-symbols-outlined text-primary-container text-[24px] mt-0.5" data-icon="local_shipping">local_shipping</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Dirección de Entrega</h4>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Calle Velázquez 42, 3º D, 28001 Madrid, España</p>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">Plazo estimado: 3 a 5 días laborables · Envío prioritario asegurado</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary, Status & Financials (5 cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Status Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6 md:p-8">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-outline tracking-wider uppercase">Referencia</span>
+<span class="px-2.5 py-1 bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold rounded flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              En preparación
+            </span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface tracking-tight mb-1">
+            #FW-84920
+          </div>
+<p class="font-body-sm text-body-sm text-outline mb-6">
+            Registrado el 24 de Octubre de 2025
+          </p>
+<!-- Email Notification Notice -->
+<div class="border-t border-b border-outline-variant/30 py-4 mb-6 flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-[20px] mt-0.5" data-icon="mark_email_read">mark_email_read</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Enviado comprobante a <span class="text-on-surface font-medium">elena.mendoza@email.com</span> con la guía de trazabilidad.
+            </p>
+</div>
+<!-- Financial Breakdown -->
+<div class="space-y-3 font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal artículos</span>
+<span>$350.00 USD</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Envío estándar a domicilio</span>
+<span>$15.00 USD</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Impuestos aduaneros e IVA</span>
+<span class="text-secondary font-medium">Incluidos</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/40 flex justify-between items-baseline">
+<span class="font-headline-sm text-headline-sm text-on-surface">Total Pagado</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-semibold">$365.00 USD</span>
+</div>
+</div>
+</div>
+<!-- Next Actions Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6 space-y-3">
+<!-- Primary CTA Button -->
+<a class="w-full text-center block bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md tracking-wider uppercase py-3.5 px-6 rounded transition-all duration-200 scale-[0.99] active:scale-95 shadow-sm" href="#">
+            Seguir explorando el catálogo
+          </a>
+<!-- Secondary CTA Button -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<button class="w-full border border-on-surface hover:bg-on-surface hover:text-surface text-on-surface font-label-sm text-label-sm tracking-wider uppercase py-2.5 px-3 rounded transition-colors duration-200 text-center flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="receipt_long">receipt_long</span>
+              Descargar PDF
+            </button>
+<button class="w-full border border-outline hover:border-on-surface text-on-surface font-label-sm text-label-sm tracking-wider uppercase py-2.5 px-3 rounded transition-colors duration-200 text-center flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+              Ver mis pedidos
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial Concierge & Assurance Strip -->
+<section class="border border-outline-variant/40 rounded-lg bg-surface-container-low p-8 text-center max-w-4xl mx-auto">
+<div class="max-w-xl mx-auto">
+<span class="material-symbols-outlined text-outline text-[28px] mb-2" data-icon="support_agent">support_agent</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Servicio Concierge y Garantía</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+          ¿Tienes alguna consulta sobre tu pedido o deseas personalizar tu entrega? Escríbenos directamente a <a class="text-primary-container font-semibold hover:underline" href="mailto:soporte@fashionworld.com">soporte@fashionworld.com</a> o consulta nuestra <a class="text-on-surface font-medium underline underline-offset-4 hover:text-primary" href="#">Guía de Envíos</a>.
+        </p>
+<div class="flex items-center justify-center gap-6 text-label-sm font-label-sm text-outline uppercase tracking-wider">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="verified">verified</span>
+            30 Días de Devolución
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="lock">lock</span>
+            Pago Seguro Encriptado
+          </span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="docked full-width bottom bg-surface-container-low dark:bg-surface-container border-t border-outline-variant/30 dark:border-outline/20 mt-20">
+<div class="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface dark:text-inverse-on-surface">
+            Fashion World
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-outline mt-1">
+            Atelier de alta costura contemporánea y diseño prêt-à-porter independiente.
+          </p>
+</div>
+<!-- Links Navigation from JSON -->
+<nav class="flex flex-wrap gap-x-8 gap-y-3">
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Atención al Cliente</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Guía de Tallas</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Envíos y Devoluciones</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Sostenibilidad</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Términos y Condiciones</a>
+<a class="text-on-surface-variant dark:text-outline font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 opacity-80 hover:opacity-100" href="#">Privacidad</a>
+</nav>
+</div>
+<div class="pt-8 border-t border-outline-variant/20 flex flex-col sm:flex-row justify-between items-center text-outline text-label-sm font-label-sm gap-4">
+<span>© 2025 Fashion World. Todos los derechos reservados. Precios expresados en USD.</span>
+<div class="flex items-center gap-4">
+<span class="hover:text-on-surface cursor-pointer transition-colors duration-150">Instagram</span>
+<span class="hover:text-on-surface cursor-pointer transition-colors duration-150">Pinterest</span>
+<span class="hover:text-on-surface cursor-pointer transition-colors duration-150">Vogue Runway</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
