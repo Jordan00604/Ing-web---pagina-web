@@ -52,6 +52,14 @@ logs/
 playwright-report/
 test-results/
 screenshots/
+# Galería pública del README: permitir únicamente estas cuatro capturas
+!/docs/screenshots/
+/docs/screenshots/*
+!/docs/screenshots/01-inicio.png
+!/docs/screenshots/02-catalogo.png
+!/docs/screenshots/03-login.png
+!/docs/screenshots/05-carrito.png
+# 04-stich.png y cualquier otra captura siguen excluidas
 *.har
 *.hprof
 hs_err_pid*

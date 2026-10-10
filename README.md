@@ -83,8 +83,6 @@ Una prenda en la bolsa, controles de cantidad y eliminación, actualización de 
 
 **Imagen de diseño revisada, no publicada:** `04-stich.png` muestra el editor de Google Stitch y su panel de configuración MCP, no la aplicación ejecutándose. Contiene fragmentos visibles de una clave API; no se enlaza hasta que se anonimice esa información. Los HTML/PNG de `docs/stitch` también son referencias de diseño, no evidencia de funcionamiento. Las pruebas se documentan por separado en [`ESTADO_PROYECTO.md`](./ESTADO_PROYECTO.md).
 
-**Nota de entrega:** la regla `screenshots/` de `.gitignore` actualmente excluye esta carpeta. Las cuatro imágenes enlazadas deberán incluirse en la entrega o en el repositorio publicado para que la galería se visualice allí; mantener fuera la captura de configuración mientras contenga información sensible.
-
 ## 📋 Requisitos previos
 
 - Java **21** (JDK y `JAVA_HOME`), Bun y PostgreSQL con servicio activo en `localhost:5432`.
